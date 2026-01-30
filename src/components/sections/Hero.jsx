@@ -9,6 +9,13 @@ import tree from '../../assets/illustrations/hero-tree.svg';
 
 // Hero component
 export default function Hero() {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="hero">
 
@@ -21,12 +28,12 @@ export default function Hero() {
         {/* signs */}
         <div className="signs-container">
           <img src={signs} alt="Signs Illustration" className="hero-signs" />
-          <p className="about">About</p>
-          <p className="faq">FAQ</p>
-          <p className="gallery">Gallery</p>
-          <p className="stats">Stats</p>
-          <p className="sponsors">Sponsors</p>
-          <p className="team">Team</p>
+          <p className="about" onClick={() => scrollToSection('about-section')}>About</p>
+          <p className="faq" onClick={() => scrollToSection('faq-section')}>FAQ</p>
+          <p className="gallery" onClick={() => scrollToSection('past-section')}>Gallery</p>
+          <p className="stats" onClick={() => scrollToSection('impact-section')}>Stats</p>
+          <p className="sponsors" onClick={() => scrollToSection('sponsors-section')}>Sponsors</p>
+          <p className="team" onClick={() => scrollToSection('team-section')}>Team</p>
         </div>
 
         {/* sign */}
@@ -64,7 +71,7 @@ export default function Hero() {
       </div>
 
       {/* What is Ignition Hacks section */}
-      <div className="hero-description">
+      <div className="hero-description" id="about-section">
         <h2>What is Ignition Hacks</h2>
         <p>Ignition Hacks is a student-led hackathon built to empower the next generation of innovative minds. This year, we are creating more than just a hackathon, we want to use our platform to build an organization supporting education and opportunities for students to help.</p>
       </div>
