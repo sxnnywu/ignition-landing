@@ -1,7 +1,74 @@
+// src/components/sections/Hero.jsx
+
+// imports
+import React from 'react';
+import './Hero.css';
+import sign from '../../assets/illustrations/hero-sign.svg';
+import signs from '../../assets/illustrations/hero-signs.svg';
+import tree from '../../assets/illustrations/hero-tree.svg';
+
+// Hero component
 export default function Hero() {
   return (
-    <section>
-      Hero Section
+    <section className="hero">
+
+      {/* left */}
+      <div className="left">
+
+        {/* tree */}
+        <img src={tree} alt="Palm Tree Illustration" className="hero-tree" />
+
+        {/* signs */}
+        <div className="signs-container">
+          <img src={signs} alt="Signs Illustration" className="hero-signs" />
+          <p className="about">About</p>
+          <p className="faq">FAQ</p>
+          <p className="gallery">Gallery</p>
+          <p className="stats">Stats</p>
+          <p className="sponsors">Sponsors</p>
+          <p className="team">Team</p>
+        </div>
+
+        {/* sign */}
+        <div className="sign-container">
+          <img src={sign} alt="Sign Illustration" className="hero-sign" />
+
+          {/* Curved texwxt over the oval using SVG textPath */}
+          <svg className="ignition-svg" viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              {/* larger arc radii for a stronger curve that follows the oval */}
+              <path id="arcPath" d="M20,100 A320,110 0 0,1 620,100" />
+            </defs>
+            <text textAnchor="middle">
+              <textPath xlinkHref="#arcPath" startOffset="50%" className="ignition-text">IGNITION HACKS</textPath>
+            </text>
+              {/* Version placed slightly below the arc, centered and nudged right */}
+              <text x="320" y="70" textAnchor="middle" className="version-text">V. 7</text>
+          </svg>
+        </div>
+
+      </div>
+
+      {/* right */}
+      <div className="right">
+
+        {/* heading */}
+        <h1>Arts & Technology <br />Hackathon</h1>
+
+        {/* date */}
+        <p>August 15-18, 2026</p>
+
+        {/* button */}
+        <button>Apply Now!</button>
+
+      </div>
+
+      {/* What is Ignition Hacks section */}
+      <div className="hero-description">
+        <h2>What is Ignition Hacks</h2>
+        <p>Ignition Hacks is a student-led hackathon built to empower the next generation of innovative minds. This year, we are creating more than just a hackathon, we want to use our platform to build an organization supporting education and opportunities for students to help.</p>
+      </div>
+
     </section>
   );
 }

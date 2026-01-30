@@ -1,0 +1,249 @@
+/* src/components/sections/Hero.css */
+
+/* Hero canvas */
+.hero {
+    width: 100vw;
+    min-height: 207vh;
+    background-image: url('../../assets/backgrounds/hero-bg.svg');
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 6rem;
+    box-sizing: border-box;
+}
+
+/* Left + right columns */
+.left,
+.right {
+    position: relative;
+}
+
+/* LEFT SIDE */
+.left {
+    width: 50%;
+}
+
+/* RIGHT SIDE */
+.right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 5rem;
+    gap: 1rem;
+}
+
+/* Containers keep relative positioning for proper context */
+.signs-container,
+.sign-container {
+    position: relative;
+}
+
+/* Illustrations */
+.hero-tree,
+.hero-signs,
+.hero-sign {
+    position: absolute;
+    pointer-events: none;
+}
+
+.hero-tree {
+    z-index: 0;
+}
+
+.hero-signs {
+    z-index: 2;
+}
+
+.hero-sign {
+    z-index: 1;
+}
+
+/* positions */
+.hero-tree {
+    top: -8vh;
+    left: -8vh;
+    width: 62%;
+}
+
+.hero-signs {
+    top: 63px;
+    left: -45px;
+    width: 48%;
+    font-family: var(--font-display);
+}
+
+.hero-sign {
+    top: 160px;
+    left: 180px;
+    width: 80%;
+    font-family: var(--font-display);
+}
+
+/* Text */
+.left p {
+    margin: 0;
+    z-index: 3;
+    font-size: 2rem;
+    position: absolute;
+    font-family: var(--font-display);
+}
+
+/* Signs Container Text */
+.signs-container p {
+    position: absolute;
+    font-weight: 400;
+    color: #333333;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 3rem; /* increased to better match original design */
+}
+
+.about {
+    font-size: 1.15rem;
+    top: 120px;
+    left: 16px;
+    transform: rotate(-5deg);
+}
+
+.faq {
+    font-size: 1.08rem;
+    top: 210px;
+    left: 25px;
+    transform: rotate(-8deg);
+}
+
+.gallery {
+    font-size: 1.1rem;
+    top: 278px;
+    left: 30px;
+    transform: rotate(-10deg);
+}
+
+.stats {
+    font-size: 1.08rem;
+    top: 355px;
+    left: 14px;
+    transform: rotate(-12deg);
+}
+
+.sponsors {
+    font-size: 1.06rem;
+    top: 424px;
+    left: 30px;
+}
+
+.team {
+    font-size: 1.07rem;
+    top: 497px;
+    left: 30px;
+    transform: rotate(-8deg);
+}
+
+/* Sign Container Text */
+.sign-container p {
+    position: absolute;
+    font-weight: 700;
+    color: var(--purple);
+    margin: 0;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.ignition-svg {
+    position: absolute;
+    z-index: 4; /* above the sign illustrations */
+    top: 188px; /* moved down a bit more */
+    left: 455px; /* nudged slightly right */
+    width: 640px;
+    height: 160px;
+    transform: translateX(-50%) rotate(-3deg);
+    pointer-events: none;
+}
+.ignition-svg .ignition-text {
+    fill: var(--purple);
+    font-family: var(--font-display);
+    font-weight: 400; /* a bit thinner */
+    font-size: 37px; /* tiny bit bigger */
+    letter-spacing: 0.18em;
+}
+.ignition-svg .version-text {
+    fill: var(--purple);
+    font-family: var(--font-display);
+    font-weight: 400; /* match thinner weight */
+    font-size: 37px; /* match smaller size */
+    letter-spacing: 0.16em;
+}
+
+.right h1 {
+    font-size: 3rem;
+    margin-top: 40px;
+    margin-bottom: 0;
+    color: var(--black);
+    font-family: var(--font-display);
+    top: 10px;
+    font-weight: 500;
+}
+
+.right p {
+    color: var(--black);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+    font-family: var(--font-display);
+}
+
+.right button {
+    width: 80%;
+    height: 45px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--purple);
+    color: var(--white);
+    font-family: var(--font-display);
+    transition: transform 0.25s ease;
+}
+
+.right button:hover {
+    background-color: var(--dark-purple);
+    transform: scale(1.05);
+}
+
+/* What is Ignition Hacks section */
+.hero-description {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 750px;
+    text-align: left;
+    z-index: 3;
+}
+
+.hero-description h2 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 500;
+    color: #7A6048;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+}
+
+.hero-description p {
+    font-family: var(--font-display);
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: #7A6048;
+    line-height: 1.1;
+    margin: 0;
+}
+
+
