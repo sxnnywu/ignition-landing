@@ -49,6 +49,7 @@
 .hero-sign {
     position: absolute;
     pointer-events: none;
+    height: auto; /* Maintain aspect ratio */
 }
 
 .hero-tree {
@@ -181,7 +182,7 @@
 }
 
 .right h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-top: 40px;
     margin-bottom: 0;
     color: var(--black);
@@ -201,7 +202,7 @@
 .right button {
     width: 80%;
     height: 45px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 400;
     border-radius: 5px;
     border: none;
@@ -220,7 +221,7 @@
 /* What is Ignition Hacks section */
 .hero-description {
     position: absolute;
-    top: 75%;
+    bottom: 80px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
@@ -231,7 +232,7 @@
 
 .hero-description h2 {
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 3.2vw, 3.5rem);
     font-weight: 500;
     color: #7A6048;
     margin: 0 0 1.5rem 0;
@@ -240,11 +241,673 @@
 
 .hero-description p {
     font-family: var(--font-display);
-    font-size: 2.1rem;
+    font-size: clamp(1.2rem, 2.1vw, 2.5rem);
     font-weight: 400;
     color: #7A6048;
     line-height: 1.1;
     margin: 0;
 }
 
+/* Large tablets (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .hero {
+        padding: 3.5rem 5rem;
+        min-height: 166vh;
+    }
+
+    .left {
+        width: 49%;
+    }
+
+    .right {
+        width: 38%;
+        padding-top: 4.5rem;
+    }
+
+    .hero-tree {
+        width: 60%;
+        top: -7vh;
+        left: -7vh;
+    }
+
+    .hero-signs {
+        width: 47%;
+        top: 5vh;
+        left: -3vw;
+    }
+
+    .hero-sign {
+        width: 78%;
+        top: 13vh;
+        left: 17vw;
+    }
+
+    .signs-container p {
+        font-size: 3.5vw;
+    }
+
+    .about {
+        top: 11vh;
+        left: 0.3vw;
+    }
+
+    .faq {
+        top: 20.5vh;
+        left: 1vw;
+    }
+
+    .gallery {
+        top: 27.5vh;
+        left: 1.5vw;
+    }
+
+    .stats {
+        top: 36vh;
+        left: 0.4vw;
+    }
+
+    .sponsors {
+        top: 43.5vh;
+        left: 1.05vw;
+    }
+
+    .team {
+        top: 50.8vh;
+        left: 1.8vw;
+    }
+
+    .ignition-svg {
+        top: 17vh;
+        left: 35.2vw;
+        width: 56vw;
+        height: 14vh;
+    }
+
+    .ignition-svg .ignition-text,
+    .ignition-svg .version-text {
+        font-size: 3.4vw;
+    }
+
+    .right h1 {
+        font-size: 3.2vw;
+        margin-top: 3.8vh;
+    }
+
+    .right p {
+        font-size: 1.2vw;
+    }
+
+    .right button {
+        width: 85%;
+        height: 4.2vh;
+        font-size: 1.3vw;
+    }
+
+    .hero-description {
+        width: 50%;
+        bottom: 5%;
+    }
+}
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 3rem 4rem;
+        min-height: 143vh;
+    }
+
+    /* Left side adjustments */
+    .left {
+        width: 48%;
+    }
+
+    .right {
+        width: 42%;
+        padding-top: 4rem;
+    }
+
+    /* Tree and signs illustrations */
+    .hero-tree {
+        width: 58%;
+        top: -6vh;
+        left: -6vh;
+    }
+
+    .hero-signs {
+        width: 45%;
+        top: 5.5vh;
+        left: -4vw;
+    }
+
+    .hero-sign {
+        width: 75%;
+        top: 14vh;
+        left: 16vw;
+    }
+
+    .signs-container p {
+        font-size: 3.1vw;
+    }
+
+    /* Sign labels - using vw for proportional scaling */
+    .about {
+        top: 10.5vh;
+        left: -0.8vw;
+    }
+
+    .faq {
+        top: 18vh;
+        left: 0vw;
+    }
+
+    .gallery {
+        top: 23.5vh;
+        left: 0.7vw;
+    }
+
+    .stats {
+        top: 30.7vh;
+        left: -0.5vw;
+    }
+
+    .sponsors {
+        top: 36.7vh;
+        left:0.4vw;
+    }
+
+    .team {
+        top: 42.5vh;
+        left: 1vw;
+    }
+
+    /* Curved SVG text - using vw/vh for proportional scaling */
+    .ignition-svg {
+        top: 17vh;
+        left: 33.4vw;
+        width: 53vw;
+        height: 13.6vh;
+    }
+
+    .ignition-svg .ignition-text,
+    .ignition-svg .version-text {
+        font-size: 3.3vw;
+    }
+
+    /* Right side content - using vw for proportional scaling */
+    .right h1 {
+        font-size: 3.2vw;
+        margin-top: 4vh;
+    }
+
+    .right p {
+        font-size: 1.3vw;
+    }
+
+    .right button {
+        width: 85%;
+        height: 4vh;
+        font-size: 1.4vw;
+    }
+
+    /* What is Ignition Hacks section - using vw for proportional scaling */
+    .hero-description {
+        width: 50%;
+        bottom: 5cqmax;
+    }
+}
+
+/* Medium tablets (max-width: 900px) */
+@media (max-width: 900px) {
+    .hero {
+        padding: 2.5rem 3rem;
+        min-height: 125vh;
+    }
+
+    .left {
+        width: 50%;
+    }
+
+    .right {
+        width: 43%;
+        padding-top: 3.5rem;
+    }
+
+    .hero-tree {
+        width: 56%;
+        top: -5vh;
+        left: -5vh;
+    }
+
+    .hero-signs {
+        width: 43%;
+        top: 6vh;
+        left: -3.5vw;
+    }
+
+    .hero-sign {
+        width: 72%;
+        top: 15vh;
+        left: 15vw;
+    }
+
+    .signs-container p {
+        font-size: 3vw;
+    }
+
+    .about {
+        top: 10.5vh;
+        left: 0vw;
+    }
+
+    .faq {
+        top: 17vh;
+        left: 0.8vw;
+    }
+
+    .gallery {
+        top: 22.2vh;
+        left: 1.4vw;
+    }
+
+    .stats {
+        top: 28.5vh;
+        left: 0.2vw;
+    }
+
+    .sponsors {
+        top: 34vh;
+        left: 1.3vw;
+    }
+
+    .team {
+        top: 39.3vh;
+        left: 1.5vw;
+    }
+
+    .ignition-svg {
+        top: 17.4vh;
+        left: 32.8vw;
+        width: 50vw;
+        height: 12.5vh;
+    }
+
+    .ignition-svg .ignition-text,
+    .ignition-svg .version-text {
+        font-size: 3.7vw;
+    }
+
+    .right h1 {
+        font-size: 4vw;
+        margin-top: 3.5vh;
+    }
+
+    .right p {
+        font-size: 1.2vw;
+    }
+
+    .right button {
+        width: 82%;
+        height: 3.8vh;
+        font-size: 1.4vw;
+    }
+
+    .hero-description {
+        width: 52%;
+        bottom: 4%;
+    }
+}
+
+/* Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+        /* Mobile-specific background */
+        background-image: url('../../assets/backgrounds/hero-mobile-background.svg');
+        background-size: cover;
+        background-position: center top;
+        min-height: 100vh; /* Adjust as needed for mobile */
+    }
+
+    .left {
+        width: 100%;
+        min-height: 110vh;
+        order: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: visible; /* Ensure signs aren't clipped */
+    }
+
+    .right {
+        width: 100%;
+        order: 2;
+        padding-top: 2rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    /* Graphics - give them proper space */
+    .hero-tree {
+        width: 38%;
+        height: auto;
+        display: none;
+        top: -40vh;
+        left: 28%;
+        transform: translateX(-50%);
+        margin-left: -15vw;
+    }
+
+    .hero-signs {
+        width: 80% !important;
+        height: auto !important;
+        min-width: 290px !important;
+        top: -21vh;
+        left: 50%;
+        transform: translateX(-120%);
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .hero-sign {
+        width: 65% !important;
+        height: auto !important;
+        min-width: 500px !important;
+        top: -15vh;
+        left: 50%;
+        transform: translateX(-32%);
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .signs-container p {
+        font-size: 3rem;
+    }
+
+    /* Labels positioned relative to signs */
+    .about {
+        top: -20vh;
+        left: 50%;
+        margin-left: -40vw;
+    }
+
+    .faq {
+        top: 38vh;
+        left: 50%;
+        margin-left: -1vw;
+    }
+
+    .gallery {
+        top: 45vh;
+        left: 50%;
+        margin-left: -16vw;
+    }
+
+    .stats {
+        top: 53vh;
+        left: 50%;
+        margin-left: -22vw;
+    }
+
+    .sponsors {
+        top: 60vh;
+        left: 50%;
+        margin-left: -15vw;
+    }
+
+    .team {
+        top: 68vh;
+        left: 50%;
+        margin-left: -15vw;
+    }
+
+    /* Oval with text */
+    .ignition-svg {
+        top: -10vh;
+        left: 20%;
+        transform: translateX(-42%) rotate(-3deg);
+        width: 55vw;
+        height: 15vh;
+        margin-left: 10vw;
+    }
+
+    .ignition-svg .ignition-text,
+    .ignition-svg .version-text {
+        font-size: 7vw;
+    }
+
+    /* Right content */
+    .right h1 {
+        font-size: 2.2rem;
+        margin-top: 0;
+    }
+
+    .right p {
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+
+    .right button {
+        width: 55%;
+        height: 3.5rem;
+        font-size: 1rem;
+    }
+
+    /* Description at bottom */
+    .hero-description {
+        position: relative;
+        width: 88%;
+        margin: 5rem auto 2rem;
+        left: auto;
+        top: 80vw;
+        transform: none;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 1.5rem 1rem;
+        min-height: 220vh;
+    }
+
+    /* Further scale down illustrations - tighter spacing */
+    .hero-tree {
+        width: 85%;
+        top: 1vh;
+    }
+
+    .hero-signs {
+        width: 68%;
+        top: 8vh;
+        margin-left: -6vw;
+    }
+
+    .hero-sign {
+        width: 100%;
+        top: 22vh;
+        margin-left: 2vw;
+    }
+
+    .signs-container p {
+        font-size: 2.1vw;
+    }
+
+    /* Mobile sign labels - aggressive vw scaling */
+    .about {
+        top: 14vh;
+        margin-left: -5.8vw;
+    }
+
+    .faq {
+        top: 21vh;
+        margin-left: -3.8vw;
+    }
+
+    .gallery {
+        top: 27vh;
+        margin-left: -2.7vw;
+    }
+
+    .stats {
+        top: 33.5vh;
+        margin-left: -6.8vw;
+    }
+
+    .sponsors {
+        top: 39.5vh;
+        margin-left: -1.7vw;
+    }
+
+    .team {
+        top: 45.5vh;
+        margin-left: -1.7vw;
+    }
+
+    /* Curved SVG text - mobile, using vw/vh */
+    .ignition-svg {
+        top: 25vh;
+        width: 79vw;
+        height: 9.5vh;
+        margin-left: 1.7vw;
+    }
+
+    .ignition-svg .ignition-text,
+    .ignition-svg .version-text {
+        font-size: 5.5vw;
+        letter-spacing: 0.14em;
+    }
+
+    /* Right side content - mobile, larger fonts for readability */
+    .right {
+        padding-top: 12rem;
+    }
+
+    .right h1 {
+        font-size: 7.5vw;
+        margin-top: 1.5vh;
+    }
+
+    .right p {
+        font-size: 3.5vw;
+    }
+
+    .right button {
+        width: 85%;
+        max-width: 280px;
+        height: 4.5vh;
+        font-size: 3.8vw;
+        background-color: var(--purple);
+        color: var(--white);
+    }
+
+    /* What is Ignition Hacks section - clearly at bottom */
+    .hero-description {
+        width: 92%;
+        top: 92%;
+    }
+}
+
+/* Extra small screens (max-width: 360px) */
+@media (max-width: 360px) {
+    .hero {
+        min-height: 200vh;
+        padding: 1rem 0.75rem;
+    }
+
+    .hero-tree {
+        width: 90%;
+        top: 1vh;
+    }
+
+    .hero-signs {
+        width: 75%;
+        top: 8vh;
+        margin-left: -7vw;
+    }
+
+    .hero-sign {
+        top: 22vh;
+        margin-left: 1.4vw;
+    }
+
+    .signs-container p {
+        font-size: 2.4vw;
+    }
+
+    /* Extra small labels - aggressive vw scaling */
+    .about {
+        top: 14vh;
+        margin-left: -7vw;
+    }
+
+    .faq {
+        top: 21vh;
+        margin-left: -4.2vw;
+    }
+
+    .gallery {
+        top: 27vh;
+        margin-left: -2.8vw;
+    }
+
+    .stats {
+        top: 33.5vh;
+        margin-left: -8.3vw;
+    }
+
+    .sponsors {
+        top: 39.5vh;
+        margin-left: -1.4vw;
+    }
+
+    .team {
+        top: 45.5vh;
+        margin-left: -1.4vw;
+    }
+
+    /* Curved SVG text - extra small, using vw/vh */
+    .ignition-svg {
+        top: 25vh;
+        width: 89vw;
+        height: 8vh;
+        margin-left: 1.4vw;
+    }
+
+    .ignition-svg .ignition-text,
+    .ignition-svg .version-text {
+        font-size: 6.5vw;
+    }
+
+    /* Right side content - extra small, maintain readability */
+    .right {
+        padding-top: 12rem;
+    }
+
+    .right h1 {
+        font-size: 8vw;
+    }
+
+    .right p {
+        font-size: 3.8vw;
+    }
+
+    .right button {
+        width: 90%;
+        height: 4.5vh;
+        font-size: 4vw;
+        background-color: var(--purple);
+        color: var(--white);
+    }
+
+    .hero-description {
+        width: 92%;
+        top: 92%;
+    }
+
+}
 
