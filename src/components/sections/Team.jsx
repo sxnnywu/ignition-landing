@@ -1,6 +1,6 @@
 export default function Team() {
   return (
-    <section>
+    <section id="team-section">
       Team Section
     </section>
   );

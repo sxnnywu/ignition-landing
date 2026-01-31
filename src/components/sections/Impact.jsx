@@ -1,6 +1,6 @@
 export default function Impact() {
   return (
-    <section>
+    <section id="impact-section">
       Impact Section
     </section>
   );

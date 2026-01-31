@@ -1,6 +1,6 @@
 export default function Past() {
   return (
-    <section>
+    <section id="past-section">
       Past Events Section
     </section>
   );
