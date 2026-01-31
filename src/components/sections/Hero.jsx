@@ -43,14 +43,19 @@ export default function Hero() {
           {/* Curved texwxt over the oval using SVG textPath */}
           <svg className="ignition-svg" viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
-              {/* larger arc radii for a stronger curve that follows the oval */}
-              <path id="arcPath" d="M20,100 A320,110 0 0,1 620,100" />
+              {/* mobile/768 curve */}
+              <path id="arcPathMobile" d="M20,100 A320,75 0 0,1 620,100" />
+              {/* desktop curve (more round) */}
+              <path id="arcPathDesktop" d="M20,100 A320,55 0 0,1 620,100" />
             </defs>
-            <text textAnchor="middle">
-              <textPath xlinkHref="#arcPath" startOffset="50%" className="ignition-text">IGNITION HACKS</textPath>
+            <text textAnchor="middle" className="ignition-text-mobile">
+              <textPath xlinkHref="#arcPathMobile" startOffset="50%" className="ignition-text">IGNITION HACKS</textPath>
+            </text>
+            <text textAnchor="middle" className="ignition-text-desktop">
+              <textPath xlinkHref="#arcPathDesktop" startOffset="50%" className="ignition-text">IGNITION HACKS</textPath>
             </text>
               {/* Version placed slightly below the arc, centered and nudged right */}
-              <text x="320" y="70" textAnchor="middle" className="version-text">V. 7</text>
+              <text x="320" y="105" textAnchor="middle" className="version-text">V. 7</text>
           </svg>
         </div>
 
