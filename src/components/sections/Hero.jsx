@@ -1,7 +1,7 @@
 // src/components/sections/Hero.jsx
 
 // imports
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Hero.css';
 import sign from '../../assets/illustrations/hero-sign.svg';
 import signs from '../../assets/illustrations/hero-signs.svg';
@@ -9,6 +9,35 @@ import tree from '../../assets/illustrations/hero-tree.svg';
 
 // Hero component
 export default function Hero() {
+  const [isVisible, setIsVisible] = useState(false);
+  const descriptionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target); // Stop observing after it's visible
+        }
+      },
+      {
+        root: null, // relative to the viewport
+        rootMargin: '0px',
+        threshold: 0.1, // 10% of the item must be visible
+      }
+    );
+
+    if (descriptionRef.current) {
+      observer.observe(descriptionRef.current);
+    }
+
+    return () => {
+      if (descriptionRef.current) {
+        observer.unobserve(descriptionRef.current);
+      }
+    };
+  }, []);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -75,9 +104,8 @@ export default function Hero() {
 
       </div>
 
-      {/* What is Ignition Hacks section */}
-      <div className="hero-description" id="about-section">
-        <h2>What is Ignition Hacks</h2>
+      <div className="hero-description reveal-on-scroll">
+        <h2>What is Ignition Hacks?</h2>
         <p>Ignition Hacks is a student-led hackathon built to empower the next generation of innovative minds. This year, we are creating more than just a hackathon, we want to use our platform to build an organization supporting education and opportunities for students to help.</p>
       </div>
 

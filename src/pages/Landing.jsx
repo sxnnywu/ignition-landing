@@ -1,6 +1,7 @@
 // src/pages/Landing.jsx
 
 // imports
+import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import Hero from '../components/sections/Hero';
@@ -13,6 +14,25 @@ import './Landing.css';
 
 // Landing component
 export default function Landing() {
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+        });
+
+        const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
+        elementsToReveal.forEach(elem => observer.observe(elem));
+
+        return () => {
+            elementsToReveal.forEach(elem => observer.unobserve(elem));
+        };
+    }, []);
+
     return (
         <>
             <Navbar />
