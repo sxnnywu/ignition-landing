@@ -9,7 +9,7 @@
     background-position: center top;
     background-repeat: no-repeat;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden; /* Hide elements sliding in from outside */
     display: flex;
     justify-content: space-between;
     padding: 4rem 6rem;
@@ -237,6 +237,8 @@
 
 /* What is Ignition Hacks section */
 .hero-description {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
     position: absolute;
     bottom: 80px;
     left: 50%;
@@ -264,6 +266,58 @@
     line-height: 1.1;
     margin: 0;
 }
+
+.hero-description.is-visible {
+    opacity: 1;
+}
+
+/* Make the animation on the text inside the container more noticeable */
+.hero-description h2,
+.hero-description p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.hero-description.is-visible h2,
+.hero-description.is-visible p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger the animation for a nicer effect */
+.hero-description.is-visible p {
+    transition-delay: 0.2s;
+}
+
+
+/* --- Animation Keyframes --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Applying Animations --- */
+/* Staggered fade-in for a clean effect */
+.left, 
+.right, 
+.hero-tree, 
+.signs-container, 
+.sign-container {
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Add delays to create a cascade effect */
+.right { animation-delay: 0.2s; }
+.hero-tree { animation-delay: 0.4s; }
+.signs-container { animation-delay: 0.6s; }
+.sign-container { animation-delay: 0.6s; }
+
 
 /* Large tablets (max-width: 1200px) */
 @media (max-width: 1200px) {
@@ -568,313 +622,6 @@
         bottom: 4%;
     }
 }
-
-/* Small Tablets (max-width: 768px) */
-@media (max-width: 768px) {
-    .hero {
-        padding: 2rem;
-        flex-direction: column;
-        align-items: center;
-        overflow: visible;
-        /* Mobile-specific background */
-        background-image: url('../../assets/backgrounds/hero-mobile-background.svg');
-        background-size: 100% auto;
-        background-position: center top;
-        min-height: 261vh; /* Adjust as needed for mobile */
-    }
-
-    .left {
-        width: 100%;
-        min-height: 110vh;
-        order: 1;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        overflow: visible; /* Ensure signs aren't clipped */
-    }
-
-    .right {
-        width: 100%;
-        order: 2;
-        padding-top: 0;
-        margin-top: 0;
-        position: relative;
-        top: -36.5rem;
-        text-align: left;
-        align-items: left;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Graphics - give them proper space */
-    .hero-tree {
-        width: 38%;
-        height: auto;
-        display: none;
-        top: -40vh;
-        left: 28%;
-        transform: translateX(-50%);
-        margin-left: -15vw;
-    }
-
-    .hero-signs {
-        width: 80% !important;
-        height: auto !important;
-        min-width: 290px !important;
-        top: -63vh;
-        left: 50%;
-        transform: translateX(-120%);
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    .hero-sign {
-        width: 65% !important;
-        height: auto !important;
-        min-width: 500px !important;
-        top: -60vh;
-        left: 50%;
-        transform: translateX(-32%);
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    .signs-container p {
-        font-size: 3.2rem;
-    }
-
-    /* Labels positioned relative to signs */
-    .about {
-        top: -56vh !important;
-        left: -40vw !important;
-        margin-left: 5% !important;
-        transform: rotate(-5deg) !important;
-    }
-
-    .faq {
-        top: -44.5vh !important;
-        left: 50% !important;
-        margin-left: -38vw !important;
-        transform: rotate(-8deg) !important;
-    }
-
-    .gallery {
-        top: -36.2vh !important;
-        left: 50% !important;
-        margin-left: -37vw !important;
-        transform: rotate(-10deg) !important;
-    }
-
-    .stats {
-        top: -25vh !important;
-        left: 50% !important;
-        margin-left: -40vw !important;
-        transform: rotate(-12deg) !important;
-    }
-
-    .sponsors {
-        top: -16.2vh !important;
-        left: 50% !important;
-        margin-left: -38vw !important;
-    }
-
-    .team {
-        top: -7vh !important;
-        left: 50% !important;
-        margin-left: -37vw !important;
-        transform: rotate(-8deg) !important;
-    }
-
-    /* Oval with text */
-    .ignition-svg {
-        top: -60vh !important;
-        left: 20% !important;
-        transform: translateX(-42%) rotate(-3deg) !important;
-        width: 55vw !important;
-        height: 20vh !important;
-        margin-left: 10.5vw !important;
-    }
-
-    .ignition-svg .ignition-text,
-    .ignition-svg .version-text {
-        font-size: 8vw;
-    }
-
-    /* Right content */
-    .right h1 {
-        font-size: 3rem;
-        margin-top: -1.5rem;
-        margin-bottom: -0.5rem;
-        text-align: left;
-    }
-
-    .right p {
-        font-size: 1.25rem;
-        margin: 0.3rem 0;
-        text-align: left;
-    }
-
-    .right button {
-        width: 100%;
-        height: 3.5rem;
-        font-size: 1.4rem;
-        margin-top: 0.5rem;
-    }
-
-    /* Description at bottom */
-    .hero-description {
-        position: relative;
-        width: 88%;
-        margin: 5rem auto 2rem;
-        left: auto;
-        top: 190vw;
-        transform: none;
-    }
-
-    .hero-description h2 {
-        font-size: 3rem;
-        color: var(--navy);
-    }
-
-    .hero-description p {
-        color: var(--navy);
-        font-size: 1.5rem;
-        line-height: 1.2;
-    }
-}
-
-/* Mobile (max-width: 480px) */
-@media (max-width: 480px) {
-    .hero {
-        background-image: url('../../assets/backgrounds/hero-mobile-background.svg');
-        background-size: 100% auto;
-        background-repeat: repeat-y;
-        min-height: 200vh;
-        overflow: visible;
-    }
-
-    .left {
-        width: 100%;
-        min-height: 110vh;
-        order: 1;
-    }
-
-    .signs-container {
-        transform: translateY(-8vh) scale(0.8) !important;
-        transform-origin: top left;
-    }
-
-    .hero-signs {
-        width: 48% !important;
-        height: auto !important;
-        top: -44vh !important;
-        left: 50% !important;
-        transform: translateX(-120%) !important;
-        min-width: 220px !important;
-    }
-
-    .hero-sign {
-        width: 60% !important;
-        height: auto !important;
-        top: -20vh !important;
-        left: 50% !important;
-        transform: translateX(-32%) !important;
-        min-width: 400px !important;
-    }
-
-    /* All labels - 480px version with !important */
-    .about {
-        top: -13.5vh !important;
-        left: -47vw !important;
-        margin-left: 5% !important;
-    }
-
-    .faq {
-        top: -13.5vh !important;
-        left: -30vw !important;
-        margin-left: 5% !important;
-    }
-
-    .gallery {
-        top: -13.5vh !important;
-        left: -13vw !important;
-        margin-left: 5% !important;
-    }
-
-    .stats {
-        top: -13.5vh !important;
-        left: 4vw !important;
-        margin-left: 5% !important;
-    }
-
-    .sponsors {
-        top: -13.5vh !important;
-        left: 21vw !important;
-        margin-left: 5% !important;
-    }
-
-    .team {
-        top: -13.5vh !important;
-        left: 38vw !important;
-        margin-left: 5% !important;
-    }
-
-    .ignition-svg .ignition-text,
-    .ignition-svg .version-text {
-        font-size: 6.2vw;
-    }
-
-    .right {
-        position: relative;
-        top: -36rem;
-        text-align: left;
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .right h1 {
-        font-size: 2.4rem;
-        margin-top: -1.5rem;
-        margin-bottom: 0.3rem;
-        text-align: left;
-    }
-
-    .right p {
-        font-size: 1.1rem;
-        margin: 0.3rem 0;
-        text-align: left;
-    }
-
-    .right button {
-        width: 100%;
-        height: 3rem;
-        margin-top: 0.5rem;
-        font-size: 1rem;
-    }
-
-    .hero-description {
-        position: relative;
-        width: 90%;
-        margin: 4rem auto 2rem;
-        top: 185vw;
-    }
-
-    .hero-description h2 {
-        font-size: 2.2rem;
-        color: var(--navy);
-    }
-
-    .hero-description p {
-        color: var(--navy);
-        font-size: 1.2rem;
-        line-height: 1.2;
-    }
-}
-
 /* Extra small screens (max-width: 360px) */
 @media (max-width: 360px) {
     .hero {
@@ -888,7 +635,7 @@
     }
 
     .hero-signs {
-        width: 75%;
+        width: 45%;
         top: 8vh;
         margin-left: -7vw;
     }
@@ -971,6 +718,329 @@
         width: 92%;
         top: 92%;
     }
+}
 
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero {
+        background-image: url('../../assets/backgrounds/hero-mobile-background.svg') !important;
+        background-size: 100% auto !important;
+        background-repeat: repeat-y !important;
+        min-height: 200vh !important;
+        overflow: visible !important;
+    }
+
+    .left {
+        position: relative !important;
+        z-index: 1 !important;
+        width: 100% !important;
+        min-height: 110vh !important;
+        order: 1 !important;
+    }
+
+    .signs-container {
+        z-index: 3 !important;
+        transform: translateY(-8vh) scale(0.8) !important;
+        transform-origin: top left !important;
+    }
+
+    .hero-signs {
+        z-index: 3 !important;
+        width: 48% !important;
+        height: auto !important;
+        top: 15vh !important;
+        left: 50% !important;
+        transform: translateX(-320%) !important;
+        min-width: 230px !important;
+    }
+    .hero-sign {
+        width: 20% !important;
+        height: auto !important;
+        top: 7vh !important;
+        left: 50% !important;
+        transform: translateX(-145%) !important;
+        min-width: 320px !important;
+        z-index: 2;
+    }
+
+    /* All labels - 480px version with !important */
+    .left p{
+        font-size: 2.6rem !important;
+    }
+
+    .about {
+        top: 21vh !important;
+        left: -147vw !important;
+        margin-left: 5% !important;
+    }
+
+    .faq {
+        top: 30vh !important;
+        left: -146vw !important;
+        margin-left: 5% !important;
+    }
+
+    .gallery {
+        top: 36.5vh !important;
+        left: -144vw !important;
+        margin-left: 5% !important;
+    }
+
+    .stats {
+        top: 45vh !important;
+        left: -147vw !important;
+        margin-left: 5% !important;
+    }
+
+    .sponsors {
+        top: 52vh !important;
+        left: -145vw !important;
+        margin-left: 5% !important;
+    }
+
+    .team {
+        top: 59vh !important;
+        left: -144vw !important;
+        margin-left: 5% !important;
+    }
+
+    .ignition-svg {
+        top: 9vh !important;
+        left: 50% !important;
+        transform: translateX(-137%) rotate(-3deg) !important;
+        width: 70vw !important;
+        height: auto !important;
+    }
+
+    .ignition-svg .ignition-text,
+    .ignition-svg .version-text {
+        font-size: 10.5vw !important;
+    }
+
+    .right {
+        width: 90% !important;
+        position: relative !important;
+        top: 81vh !important;
+        text-align: left !important;
+        min-width: 260px !important;
+        left: 50px !important;
+    }
+
+    .right h1 {
+        font-size: 2rem !important;
+        margin-top: -1.5rem !important;
+        margin-bottom: 0rem !important;
+        text-align: left !important;
+        min-width: 270px !important;
+    }
+
+    .right p {
+        font-size: 0.9rem !important;
+        margin: -0.5rem 0 !important;
+        text-align: left !important;
+    }
+
+    .right button {
+        width: 100% !important;
+        height: 3rem !important;
+        margin-top: 0.5rem !important;
+        font-size: 1.3rem !important;
+    }
+
+    .hero-description {
+        position: relative !important;
+        width: 100% !important;
+        min-width: 300px !important;
+        margin: 4rem auto 2rem !important;
+        top: 312vw !important;
+        left: -80px !important;
+    }
+
+    .hero-description h2 {
+        font-size: 1.8rem !important;
+        color: var(--navy) !important;
+    }
+
+    .hero-description p {
+        color: var(--navy) !important;
+        font-size: 1rem !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Small Tablets (max-width: 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero {
+        padding: 2rem;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+        /* Mobile-specific background */
+        background-image: url('../../assets/backgrounds/hero-mobile-background.svg');
+        background-size: 100% auto;
+        background-position: center top;
+        min-height: 261vh; /* Adjust as needed for mobile */
+    }
+
+    .left {
+        width: 100%;
+        min-height: 110vh;
+        order: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: visible; /* Ensure signs aren't clipped */
+    }
+
+    .right {
+        width: 100%;
+        order: 2;
+        padding-top: 0;
+        margin-top: 0;
+        position: relative;
+        top: -36.5rem;
+        text-align: left;
+        align-items: left;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Graphics - give them proper space */
+    .hero-tree {
+        width: 38%;
+        height: auto;
+        display: none;
+        top: -40vh;
+        left: 28%;
+        transform: translateX(-50%);
+        margin-left: -15vw;
+    }
+
+    .hero-signs {
+        z-index: 2 !important;
+        transform: translateX(-121%) !important;
+        width: 60% !important;
+        height: auto !important;
+        min-width: 288px !important;
+        top: -67.5vh !important;
+        left: 50% !important;
+    }
+
+    .hero-sign {
+        z-index: 1 !important;
+        width: 60% !important;
+        height: auto !important;
+        min-width: 500px !important;
+        top: -60vh;
+        left: 50%;
+        transform: translateX(-32%);
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .signs-container p {
+        font-size: 3.2rem;
+    }
+
+    /* Labels positioned relative to signs */
+    .about {
+        top: -61vh !important;
+        left: -40vw !important;
+        margin-left: 5% !important;
+        transform: rotate(-5deg) !important;
+    }
+
+    .faq {
+        top: -49.5vh !important;
+        left: 50% !important;
+        margin-left: -38vw !important;
+        transform: rotate(-8deg) !important;
+    }
+
+    .gallery {
+        top: -41.2vh !important;
+        left: 50% !important;
+        margin-left: -37vw !important;
+        transform: rotate(-10deg) !important;
+    }
+
+    .stats {
+        top: -30vh !important;
+        left: 50% !important;
+        margin-left: -40vw !important;
+        transform: rotate(-12deg) !important;
+    }
+
+    .sponsors {
+        top: -21.2vh !important;
+        left: 50% !important;
+        margin-left: -38vw !important;
+    }
+
+    .team {
+        top: -12vh !important;
+        left: 50% !important;
+        margin-left: -37vw !important;
+        transform: rotate(-8deg) !important;
+    }
+
+    /* Oval with text */
+    .ignition-svg {
+        top: -60vh !important;
+        left: 20% !important;
+        transform: translateX(-42%) rotate(-3deg) !important;
+        width: 55vw !important;
+        height: 20vh !important;
+        margin-left: 10.5vw !important;
+    }
+
+    .ignition-svg .ignition-text,
+    .ignition-svg .version-text {
+        font-size: 8vw;
+    }
+
+    /* Right content */
+    .right h1 {
+        font-size: 3rem;
+        margin-top: -1.5rem;
+        margin-bottom: -0.5rem;
+        text-align: left;
+    }
+
+    .right p {
+        font-size: 1.25rem;
+        margin: 0.3rem 0;
+        text-align: left;
+    }
+
+    .right button {
+        width: 100%;
+        height: 3.5rem;
+        font-size: 1.4rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Description at bottom */
+    .hero-description {
+        position: relative;
+        width: 88%;
+        margin: 5rem auto 2rem;
+        left: auto;
+        top: 190vw;
+        transform: none;
+    }
+
+    .hero-description h2 {
+        font-size: 3rem;
+        color: var(--navy);
+    }
+
+    .hero-description p {
+        color: var(--navy);
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
 }
 
