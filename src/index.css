@@ -1,10 +1,11 @@
 /* Colours + Fonts */
 :root {
-    --brown: #2F2F2F;
-    --purple: #956AEC;
-    --dark-purple: #7B4DE8;
-    --black: #000000;
-    --white: #FFFFFF;
-    --navy: #1D64A2;
-    --font-display: 'BM Jua', sans-serif;
+  --brown: #2f2f2f;
+  --purple: #956aec;
+  --dark-purple: #7b4de8;
+  --black: #000000;
+  --white: #ffffff;
+  --navy: #1d64a2;
+  --footer-background: #76e6ff;
+  --font-display: 'BM Jua', sans-serif;
 }
