@@ -1,7 +1,5 @@
+import './Impact.css';
+
 export default function Impact() {
-  return (
-    <section id="impact-section">
-      Impact Section
-    </section>
-  );
+  return <div id="impact-section" className="impact"></div>;
 }

@@ -1,0 +1,12 @@
+.impact {
+  width: 100vw;
+  min-height: calc(100vw * 1488 / 1440);
+  background-image: url('../../assets/backgrounds/impact-background.svg');
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
