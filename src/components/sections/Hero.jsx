@@ -19,16 +19,9 @@ export default function Hero() {
 
       {/* content */}
       <div className="content">
-
-        {/* heading */}
         <h1>Arts & Technology <br />Hackathon</h1>
-
-        {/* date */}
         <p>August 15-18, 2026</p>
-
-        {/* button */}
         <button>Apply Now!</button>
-
       </div>
 
       {/* What is Ignition Hacks section */}
