@@ -1,0 +1,35 @@
+<svg width="1440" height="1253" viewBox="0 0 1440 1253" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Coconut body -->
+<g filter="url(#filter3_n_450_748)">
+<path d="M623.535 885.649C623.535 918.764 605.9 956.19 547.116 957.366C488.919 955.015 471.284 918.764 471.284 885.649C471.284 852.534 506.209 842.737 547.116 842.737C588.023 842.737 623.535 852.534 623.535 885.649Z" fill="#5F4520"/>
+</g>
+<path d="M547.704 844.5C567.235 844.5 584.864 847.643 597.566 852.682C603.92 855.203 608.984 858.175 612.439 861.416C615.892 864.654 617.657 868.077 617.657 871.542C617.657 875.006 615.892 878.428 612.439 881.667C608.984 884.907 603.92 887.879 597.566 890.4C584.864 895.439 567.235 898.582 547.704 898.582C528.172 898.582 510.544 895.439 497.841 890.4C491.487 887.879 486.423 884.907 482.968 881.667C479.516 878.428 477.751 875.006 477.75 871.542C477.75 868.077 479.515 864.654 482.968 861.416C486.423 858.175 491.487 855.203 497.841 852.682C510.544 847.643 528.172 844.5 547.704 844.5Z" fill="white" stroke="#2A1D0B" stroke-width="2.35137"/>
+<ellipse cx="547.703" cy="867.426" rx="52.318" ry="17.0474" fill="#ECECEC"/>
+<line x1="564.97" y1="878.478" x2="605.782" y2="803.132" stroke="#B0FFAF" stroke-width="10.5812" stroke-linecap="round"/>
+<line x1="567.573" y1="878.353" x2="631.855" y2="821.692" stroke="#AFFFFC" stroke-width="10.5812" stroke-linecap="round"/>
+<path d="M485.98 856.257L498.325 872.717L525.953 835.095C486.005 822.019 472.581 830.823 456 859.784L475.399 867.426L485.98 856.257Z" fill="#F1FF5C"/>
+<path d="M456 859.784C473.183 830.306 486.536 821.319 525.365 835.682" stroke="#9F995F" stroke-width="5.87843"/>
+<path d="M458.352 860.372L485.98 856.257L475.399 867.426L458.352 860.372Z" fill="#FFE15C"/>
+<!-- Red ball -->
+<circle cx="980.073" cy="241.073" r="108.611" transform="rotate(3.88042 980.073 241.073)" fill="#FF585B"/>
+<path d="M911 210.5C927.385 228.778 937.471 228.408 956.5 215.5M1002.5 227.5C1007.14 249.599 1016 254.215 1041 251" stroke="black" stroke-width="6" stroke-linecap="round"/>
+<ellipse cx="970.753" cy="256.987" rx="14" ry="19.5" transform="rotate(12.0142 970.753 256.987)" fill="#A40003"/>
+<defs>
+<filter id="filter3_n_450_748" x="471.284" y="842.737" width="152.251" height="114.629" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.47253745794296265 0.47253745794296265" stitchTiles="stitch" numOctaves="3" result="noise" seed="4007" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_450_748">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+</defs>
+</svg>
