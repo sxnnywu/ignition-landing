@@ -102,3 +102,79 @@
     line-height: 1.1;
     margin: 0;
 }
+
+
+/* --- MOBILE LAYOUT (Stacking) --- */
+@media screen and (max-width: 768px) {
+    .hero {
+        /* Mobile background image */
+        background-image: url('../../assets/backgrounds/hero-mobile-bg.svg');
+        /* Force height to match the image aspect ratio exactly */
+        /* 984 / 393 = ~2.503 */
+        min-height: calc(100vw * (984 / 393));
+        aspect-ratio: 393/984;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* stacking from top */
+        align-items: center;
+        padding: 0; /* Reset desktop padding */
+    }
+
+    .content {
+        /* Center the container, but left-align the text inside it */
+        width: fit-content; 
+        max-width: 85%;
+        margin-top: 145%; /* Pushed down a bit more */
+        padding-top: 0;
+        align-items: flex-start; /* Left align items inside */
+        text-align: left; /* Left align text */
+        gap: 0.5rem; /* Decreased gap from desktop's 1rem */
+    }
+
+    .content h1 {
+        /* Reset font size for mobile specific readability */
+        font-size: clamp(1.2rem, 7vw, 2.5rem);
+        margin-top: 0;
+    }
+    
+    .content p {
+        font-size: clamp(0.85rem, 4.5vw, 1.2rem);
+        text-align: left;
+    }
+    
+    .content button {
+        width: 100%;
+        max-width: 220px;
+        height: 38px; /* Less tall */
+        font-size: clamp(0.9rem, 4vw, 1.2rem); 
+    }
+
+    .hero-description {
+        /* Stop floating, start stacking */
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        
+        width: 80%; /* Match width feel */
+        /* 
+           Reduced rate of growth (slower slope) and smaller gap:
+           - Narrow (350px): ~3.5rem
+           - Wide (768px): ~16rem
+        */
+        margin-top: calc(40vw - 4rem); 
+    }
+
+    .hero-description h2 {
+        /* Dynamic scaling for mobile range using vw */
+        font-size: clamp(1.1rem, 5vw, 1.8rem);
+        color: var(--navy);
+    }
+    
+    .hero-description p {
+        /* Dynamic scaling for mobile range using vw */
+        font-size: clamp(0.9rem, 4vw, 1.4rem);
+        color: var(--navy);
+    }
+}
