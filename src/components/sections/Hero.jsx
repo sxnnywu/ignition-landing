@@ -3,7 +3,6 @@
 // imports
 import React from 'react';
 import './Hero.css';
-import tree from '../../assets/illustrations/hero-tree.svg';
 
 // Hero component
 export default function Hero() {
