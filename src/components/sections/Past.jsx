@@ -10,7 +10,7 @@ import team from '../../assets/illustrations/past/slideshow/team.png';
 
 export default function Past() {
     return (
-        <section className="past-section">
+        <section className="past-section" id="gallery">
             <div className="post">
                 <img src={post} alt="Past Event Illustration" className="post-image" />
                 <h2 className="post-text">BLAST FROM THE PAST</h2>

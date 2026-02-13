@@ -144,7 +144,7 @@ export default function MeetTheTeam() {
   );
 
   return (
-    <div className="team-container">
+    <div className="team-container" id="team">
       <img
         className="team-vector-bg-1"
         alt="Vector"

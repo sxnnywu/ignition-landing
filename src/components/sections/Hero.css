@@ -178,3 +178,73 @@
         color: var(--navy);
     }
 }
+
+/* --- SIGNPOST NAVIGATION OVERLAY --- */
+
+/* The container covers the general area of the signpost */
+.signpost-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Above the background, below the text content if they overlap */
+    pointer-events: none; /* Let clicks pass through the empty areas */
+}
+
+/* Common styles for all hitboxes */
+.sign-hitbox {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: auto; /* Re-enable clicking for the boxes */
+    
+    /* DEBUG MODE: Uncomment the line below to SEE the boxes and adjust positions */
+    /* background-color: rgba(255, 0, 0, 0.3); border: 1px solid red; */
+}
+.sign-about {
+    height: 5.5%;
+    top: 10.8%;
+    left: 4%;
+    width: 15%;
+    transform: rotate(-6deg);
+}
+
+.sign-faq {
+    height: 5%;
+    top: 17%;
+    left: 3.7%;
+    width: 14%;
+    transform: rotate(-6deg);
+}
+
+.sign-gallery {
+    height: 5.5%;
+    top: 21.5%;
+    left: 6.5%;
+    width: 17%;
+    transform: rotate(-8deg);
+}
+
+.sign-stats {
+    height: 4.8%;
+    top: 27.5%;
+    left: 5%;
+    width: 12.5%;
+    transform: rotate(-11deg);
+}
+
+.sign-sponsors {
+    height: 5.2%;
+    left: 7%;
+    top: 32.2%;
+    width: 17%;
+    transform: rotate(-0.5deg);
+}
+
+.sign-team {
+    height: 4.2%;
+    top: 37.5%;
+    left: 5.8%;
+    width: 14%;
+    transform: rotate(-7deg);
+}

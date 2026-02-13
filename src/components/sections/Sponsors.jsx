@@ -1,6 +1,6 @@
 export default function Sponsors() {
   return (
-    <section id="sponsors-section">
+    <section id="sponsors">
       Sponsors Section
     </section>
   );
