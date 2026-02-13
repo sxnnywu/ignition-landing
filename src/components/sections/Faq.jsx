@@ -17,7 +17,7 @@ const towels = [
 
 export default function Faq() {
   return (
-    <section className="faq-section">
+    <section className="faq-section" id="faq">
       <div className="faq-towels">
         {towels.map((towel) => (
           <div key={towel.id} className={`faq-towel ${towel.className}`}>

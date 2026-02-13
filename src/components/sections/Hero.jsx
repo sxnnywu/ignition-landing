@@ -16,6 +16,16 @@ export default function Hero() {
   return (
     <section className="hero">
 
+      {/* --- NEW: Invisible Navigation Overlay --- */}
+      <div className="signpost-container">
+        <div className="sign-hitbox sign-about" onClick={() => scrollToSection('about-section')}></div>
+        <div className="sign-hitbox sign-faq" onClick={() => scrollToSection('faq')}></div>
+        <div className="sign-hitbox sign-gallery" onClick={() => scrollToSection('gallery')}></div>
+        <div className="sign-hitbox sign-stats" onClick={() => scrollToSection('stats')}></div>
+        <div className="sign-hitbox sign-sponsors" onClick={() => scrollToSection('sponsors')}></div>
+        <div className="sign-hitbox sign-team" onClick={() => scrollToSection('team')}></div>
+      </div>
+
       {/* content */}
       <div className="content">
         <h1>Arts & Technology <br />Hackathon</h1>
