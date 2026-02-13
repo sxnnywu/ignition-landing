@@ -2,7 +2,7 @@
 
 /* Hero canvas */
 .hero {
-    width: 100vw;
+    width: 100%;
     /* Maintain aspect ratio to match the background image (1440x1464) scaling */
     aspect-ratio: 1440/1464;
     background-image: url('../../assets/backgrounds/hero-bg.svg');
