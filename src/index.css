@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* Colours + Fonts */
 :root {
   --brown: #2f2f2f;
