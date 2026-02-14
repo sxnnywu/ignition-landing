@@ -126,9 +126,9 @@
     pointer-events: auto;
     /* Re-enable clicking for the boxes */
 
-    /* DEBUG MODE: Uncomment the line below to SEE the boxes and adjust positions */
-    background-color: rgba(255, 0, 0, 0.3);
-    border: 1px solid red;
+    /* DEBUG MODE: Uncomment the lines below to SEE the boxes and adjust positions */
+    /* background-color: rgba(255, 0, 0, 0.3); */
+    /* border: 1px solid red; */
 }
 
 .sign-about {
@@ -281,9 +281,9 @@
         pointer-events: auto;
         /* Re-enable clicking for the boxes */
 
-        /* DEBUG MODE: Uncomment the line below to SEE the boxes and adjust positions */
-        background-color: rgba(255, 0, 0, 0.3);
-        border: 1px solid red;
+        /* DEBUG MODE: Uncomment the lines below to SEE the boxes and adjust positions */
+        /* background-color: rgba(255, 0, 0, 0.3); */
+        /* border: 1px solid red; */
     }
 
     .sign-about {
