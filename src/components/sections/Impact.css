@@ -10,3 +10,10 @@
   justify-content: space-between;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  .impact {
+    min-height: calc(100vw * 492 / 393);
+    background-image: url('../../assets/backgrounds/impact-background-mobile.svg');
+  }
+}
