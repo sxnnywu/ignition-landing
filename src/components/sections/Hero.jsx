@@ -1,43 +1,11 @@
 // src/components/sections/Hero.jsx
 
 // imports
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './Hero.css';
-import sign from '../../assets/illustrations/hero-sign.svg';
-import signs from '../../assets/illustrations/hero-signs.svg';
-import tree from '../../assets/illustrations/hero-tree.svg';
 
 // Hero component
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-  const descriptionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target); // Stop observing after it's visible
-        }
-      },
-      {
-        root: null, // relative to the viewport
-        rootMargin: '0px',
-        threshold: 0.1, // 10% of the item must be visible
-      }
-    );
-
-    if (descriptionRef.current) {
-      observer.observe(descriptionRef.current);
-    }
-
-    return () => {
-      if (descriptionRef.current) {
-        observer.unobserve(descriptionRef.current);
-      }
-    };
-  }, []);
-
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -48,64 +16,26 @@ export default function Hero() {
   return (
     <section className="hero">
 
-      {/* left */}
-      <div className="left">
-
-        {/* tree */}
-        <img src={tree} alt="Palm Tree Illustration" className="hero-tree" />
-
-        {/* signs */}
-        <div className="signs-container">
-          <img src={signs} alt="Signs Illustration" className="hero-signs" />
-          <p className="about" onClick={() => scrollToSection('about-section')}>About</p>
-          <p className="faq" onClick={() => scrollToSection('faq-section')}>FAQ</p>
-          <p className="gallery" onClick={() => scrollToSection('past-section')}>Gallery</p>
-          <p className="stats" onClick={() => scrollToSection('impact-section')}>Stats</p>
-          <p className="sponsors" onClick={() => scrollToSection('sponsors-section')}>Sponsors</p>
-          <p className="team" onClick={() => scrollToSection('team-section')}>Team</p>
-        </div>
-
-        {/* sign */}
-        <div className="sign-container">
-          <img src={sign} alt="Sign Illustration" className="hero-sign" />
-
-          {/* Curved texwxt over the oval using SVG textPath */}
-          <svg className="ignition-svg" viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              {/* mobile/768 curve */}
-              <path id="arcPathMobile" d="M20,100 A320,75 0 0,1 620,100" />
-              {/* desktop curve (more round) */}
-              <path id="arcPathDesktop" d="M20,100 A320,55 0 0,1 620,100" />
-            </defs>
-            <text textAnchor="middle" className="ignition-text-mobile">
-              <textPath xlinkHref="#arcPathMobile" startOffset="50%" className="ignition-text">IGNITION HACKS</textPath>
-            </text>
-            <text textAnchor="middle" className="ignition-text-desktop">
-              <textPath xlinkHref="#arcPathDesktop" startOffset="50%" className="ignition-text">IGNITION HACKS</textPath>
-            </text>
-              {/* Version placed slightly below the arc, centered and nudged right */}
-              <text x="320" y="105" textAnchor="middle" className="version-text">V. 7</text>
-          </svg>
-        </div>
-
+      {/* --- NEW: Invisible Navigation Overlay --- */}
+      <div className="signpost-container">
+        <div className="sign-hitbox sign-about" onClick={() => scrollToSection('about-section')}></div>
+        <div className="sign-hitbox sign-faq" onClick={() => scrollToSection('faq')}></div>
+        <div className="sign-hitbox sign-gallery" onClick={() => scrollToSection('gallery')}></div>
+        <div className="sign-hitbox sign-stats" onClick={() => scrollToSection('stats')}></div>
+        <div className="sign-hitbox sign-sponsors" onClick={() => scrollToSection('sponsors')}></div>
+        <div className="sign-hitbox sign-team" onClick={() => scrollToSection('team')}></div>
       </div>
 
-      {/* right */}
-      <div className="right">
-
-        {/* heading */}
+      {/* content */}
+      <div className="content">
         <h1>Arts & Technology <br />Hackathon</h1>
-
-        {/* date */}
         <p>August 15-18, 2026</p>
-
-        {/* button */}
         <button>Apply Now!</button>
-
       </div>
 
-      <div className="hero-description reveal-on-scroll">
-        <h2>What is Ignition Hacks?</h2>
+      {/* What is Ignition Hacks section */}
+      <div className="hero-description" id="about-section">
+        <h2>What is Ignition Hacks</h2>
         <p>Ignition Hacks is a student-led hackathon built to empower the next generation of innovative minds. This year, we are creating more than just a hackathon, we want to use our platform to build an organization supporting education and opportunities for students to help.</p>
       </div>
 
