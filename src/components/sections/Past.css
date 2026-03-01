@@ -1,42 +1,17 @@
 .past-section {
     width: 100vw;
-    min-height: 207vh;
-    background-image: url('../../assets/backgrounds/past-bg.png');
-    background-size: 100% auto;
-    background-position: center top;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow-x: hidden;
-    display: flex;
-    justify-content: space-between;
-    padding: 4rem 6rem;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 2rem;
     background-color: #f9f9f9;
+    overflow-x: hidden;
 }
 
-.post-image {
-    z-index: 5;
-    margin-left: 9rem;
-    margin-top: 2rem;
-    width: 90%;
+.past-bg-wrapper {
+    position: relative;
+    width: 100%;
 }
 
-.post-text {
-    position: absolute;
-    top: 5.5%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #C4A574;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-family: var(--font-display);
-    z-index: 10;
-    white-space: nowrap;
-    margin: 0;
+.past-bg-image {
+    width: 100%;
+    display: block;
 }
 
 .left-arrow-illustration {
@@ -56,36 +31,8 @@
 .slideshow-image {
     z-index: 0;
     position: absolute;
-    top: 8.5%;
-    left: 24.8%;
-    width: 62.8%;
+    top: 14.5%;
+    left: 25%;
+    width: 64.33%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.red-snorkler-illustration {
-    position: absolute;
-    bottom: 61.9%;
-    right: 67%;
-    width: 30%;
-}
-
-.ground-spots-illustration {
-    position: absolute;
-    bottom: 54.5%;
-    right: 65%;
-    width: 25%;
-}
-
-.grass-illustration {
-    position: absolute;
-    bottom: 54.5%;
-    right: 24%;
-    width: 22%;
-}
-
-.iggy-surf-illustration {
-    position: absolute;
-    bottom: 52%;
-    right: 2%;
-    width: 30%;
 }
