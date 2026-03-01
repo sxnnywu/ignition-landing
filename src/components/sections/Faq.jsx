@@ -9,11 +9,11 @@ import faqOverlay from '../../assets/illustrations/faq-overlay.svg';
 import faqOverlayMobile from '../../assets/illustrations/faq-overlay-mobile.svg';
 
 const towels = [
-  { id: 1, src: lightPinkTowel, alt: 'Light pink towel', className: 'faq-towel--1', question: 'How many people on a team?' },
-  { id: 2, src: yellowTowel, alt: 'Yellow towel', className: 'faq-towel--2', question: 'What if I don\u2019t have a team?' },
-  { id: 3, src: lightBlueTowel, alt: 'Light blue towel', className: 'faq-towel--3', question: 'How much does it cost to attend?' },
-  { id: 4, src: darkBlueTowel, alt: 'Dark blue towel', className: 'faq-towel--4', question: 'How long will the hackathon last?' },
-  { id: 5, src: greenTowel, alt: 'Green towel', className: 'faq-towel--5', question: 'Who can participate?' },
+  { id: 1, src: lightPinkTowel, alt: 'Light pink towel', className: 'faq-towel--1', lines: ['How many people', 'on a team?'], answer: 'You can sign up solo and we\u2019ll help match you with a team!' },
+  { id: 2, src: yellowTowel, alt: 'Yellow towel', className: 'faq-towel--2', lines: ['What if I don\u2019t', 'have a team?'], answer: 'You can sign up solo and we\u2019ll help match you with a team!' },
+  { id: 3, src: lightBlueTowel, alt: 'Light blue towel', className: 'faq-towel--3', lines: ['How much does it', 'cost to attend?'], answer: 'You can sign up solo and we\u2019ll help match you with a team!' },
+  { id: 4, src: darkBlueTowel, alt: 'Dark blue towel', className: 'faq-towel--4', lines: ['How long will the', 'hackathon last?'], answer: 'You can sign up solo and we\u2019ll help match you with a team!' },
+  { id: 5, src: greenTowel, alt: 'Green towel', className: 'faq-towel--5', lines: ['Who can', 'participate?'], answer: 'You can sign up solo and we\u2019ll help match you with a team!' },
 ];
 
 export default function Faq() {
@@ -24,7 +24,14 @@ export default function Faq() {
         {towels.map((towel) => (
           <div key={towel.id} className={`faq-towel ${towel.className}`}>
             <img src={towel.src} alt={towel.alt} />
-            <span className="faq-towel-text">{towel.question}</span>
+            <div className="faq-towel-content">
+              <span className="faq-towel-text">
+                {towel.lines.map((line, i) => (
+                  <span key={i}>{line}{i < towel.lines.length - 1 && <br />}</span>
+                ))}
+              </span>
+              <p className="faq-towel-answer">{towel.answer}</p>
+            </div>
           </div>
         ))}
       </div>

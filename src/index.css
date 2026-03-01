@@ -18,5 +18,5 @@ html, body {
   --white: #ffffff;
   --navy: #1d64a2;
   --footer-background: #76e6ff;
-  --font-display: 'BM Jua', sans-serif;
+  --font-display: 'Jua', 'BM Jua', sans-serif;
 }
