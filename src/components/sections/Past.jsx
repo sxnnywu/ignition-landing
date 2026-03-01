@@ -1,6 +1,7 @@
 import "./Past.css";
 import leftArrow from '../../assets/illustrations/past/left-arrow.png';
 import rightArrow from '../../assets/illustrations/past/right-arrow.png';
+import whale from '../../assets/illustrations/past/whale.png'
 import team from '../../assets/illustrations/past/slideshow/team.png';
 import pastBg from '../../assets/backgrounds/past-bg.png';
 
@@ -15,6 +16,7 @@ export default function Past() {
 
                 <img src={leftArrow} className="left-arrow-illustration" />
                 <img src={rightArrow} className="right-arrow-illustration" />
+                <img src={whale} className="whale-illustration"/>
             </div>
         </section>
     );

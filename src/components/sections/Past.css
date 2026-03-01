@@ -28,6 +28,13 @@
     width: 10%;
 }
 
+.whale-illustration {
+    position: absolute;
+    bottom: 68%;
+    left: 15%;
+    width: 12.7%;
+}
+
 .slideshow-image {
     z-index: 0;
     position: absolute;
