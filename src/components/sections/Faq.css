@@ -30,19 +30,37 @@
   display: block;
 }
 
-.faq-towel-text {
+.faq-towel-content {
   position: absolute;
-  top: 10%;
+  top: 10.5%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 57.18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875vw;
+  pointer-events: none;
+}
+
+.faq-towel-text {
   text-align: center;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 1.1vw;
+  font-size: 1.389vw;
   color: #000;
-  pointer-events: none;
-  line-height: 1.35;
+  line-height: 1.25;
+}
+
+.faq-towel-answer {
+  text-align: center;
+  font-family: 'Satoshi Variable', 'Satoshi', sans-serif;
+  font-size: 1.389vw;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
+  margin: 0;
 }
 
 /* Red ball + coconut overlay (renders above towels) */
@@ -149,8 +167,16 @@
     top: 15%;
   }
 
+  .faq-towel-content {
+    gap: 3.5vw;
+  }
+
   .faq-towel-text {
-    font-size: 2.2vw;
+    font-size: 2.8vw;
+  }
+
+  .faq-towel-answer {
+    font-size: 2.8vw;
   }
 
   /* Towel 1 - Light Pink (top, right — swapped with dark blue) */
