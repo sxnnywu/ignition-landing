@@ -37,7 +37,7 @@ export default function Landing() {
   }, []);
 
   return (
-    <>
+    <div className="page-wrapper">
       <Navbar />
       <Hero />
       <Impact />
@@ -46,6 +46,6 @@ export default function Landing() {
       <Sponsors />
       <Team />
       <Footer />
-    </>
+    </div>
   );
 }

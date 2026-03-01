@@ -1,6 +1,6 @@
 .faq-section {
-  width: 100vw;
-  min-height: calc(100vw * 1253 / 1440);
+  width: 100%;
+  aspect-ratio: 1440 / 1253;
   background-image: url('../../assets/backgrounds/faq-background.svg');
   background-size: 100% auto;
   background-position: center top;
@@ -130,7 +130,7 @@
 */
 @media (max-width: 768px) {
   .faq-section {
-    min-height: calc(100vw * 825 / 392);
+    aspect-ratio: 392 / 825;
     background-image: url('../../assets/backgrounds/faq-background-mobile.svg');
   }
 
