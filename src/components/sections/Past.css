@@ -16,15 +16,15 @@
 
 .left-arrow-illustration {
     position: absolute;
-    bottom: 77%;
+    bottom: 57.7%;
     left: 18%;
     width: 10%;
 }
 
 .right-arrow-illustration {
     position: absolute;
-    bottom: 77%;
-    right: 6%;
+    bottom: 57.7%;
+    right: 4%;
     width: 10%;
 }
 
@@ -33,6 +33,6 @@
     position: absolute;
     top: 14.5%;
     left: 25%;
-    width: 64.33%;
+    width: 64.3%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
