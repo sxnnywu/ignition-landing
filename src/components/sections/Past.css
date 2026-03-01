@@ -19,6 +19,12 @@
     bottom: 57.7%;
     left: 18%;
     width: 10%;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.left-arrow-illustration:active {
+    transform: scale(0.93);
 }
 
 .right-arrow-illustration {
@@ -26,6 +32,12 @@
     bottom: 57.7%;
     right: 4%;
     width: 10%;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.right-arrow-illustration:active {
+    transform: scale(0.93);
 }
 
 .whale-illustration {
@@ -42,4 +54,10 @@
     left: 25%;
     width: 64.3%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
