@@ -1,42 +1,33 @@
+import { useState } from 'react';
 import "./Past.css";
-import post from '../../assets/illustrations/past/post.png';
-import redSnorkler from '../../assets/illustrations/past/red-snorkler.png';
-import iggySurf from '../../assets/illustrations/past/iggy-surf.png';
-import grass from '../../assets/illustrations/past/grass.png';
-import groundSpots from '../../assets/illustrations/past/ground-spots.png';
 import leftArrow from '../../assets/illustrations/past/left-arrow.png';
 import rightArrow from '../../assets/illustrations/past/right-arrow.png';
+import whale from '../../assets/illustrations/past/whale.png';
+import pastBg from '../../assets/backgrounds/past-bg.png';
 import team from '../../assets/illustrations/past/slideshow/team.png';
+import test1 from '../../assets/illustrations/past/slideshow/test1.png';
+import test2 from '../../assets/illustrations/past/slideshow/test2.jpg';
+
+const slides = [team, test1, test2];
 
 export default function Past() {
+    const [index, setIndex] = useState(0);
+
+    const prev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
+    const next = () => setIndex((i) => (i + 1) % slides.length);
+
     return (
         <section className="past-section" id="gallery">
-            <div className="post">
-                <img src={post} alt="Past Event Illustration" className="post-image" />
-                <h2 className="post-text">BLAST FROM THE PAST</h2>
-
+            <div className="past-bg-wrapper">
+                <img src={pastBg} className="past-bg-image" alt="" />
                 <div className="slideshow">
-                    <img src={team} className="slideshow-image" />
+                    <img key={index} src={slides[index]} className="slideshow-image" />
                 </div>
 
-                <img src={leftArrow} className="left-arrow-illustration" />
-                <img src={rightArrow} className="right-arrow-illustration" />
-
+                <img src={leftArrow} className="left-arrow-illustration" onClick={prev} />
+                <img src={rightArrow} className="right-arrow-illustration" onClick={next} />
+                <img src={whale} className="whale-illustration" />
             </div>
-            <div className="red-snorkler">
-                <img src={redSnorkler} className="red-snorkler-illustration" />
-            </div>
-            <div className="ground-spots">
-                <img src={groundSpots} className="ground-spots-illustration" />
-            </div>
-            <div className="grass">
-                <img src={grass} className="grass-illustration" />
-            </div>
-            <div className="iggy-surf">
-                <img src={iggySurf} className="iggy-surf-illustration" />
-            </div>
-
-            
         </section>
     );
 }
