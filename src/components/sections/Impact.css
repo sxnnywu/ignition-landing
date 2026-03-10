@@ -1,6 +1,6 @@
 .impact {
-  width: 100vw;
-  min-height: calc(100vw * 1488 / 1440);
+  width: 100%;
+  aspect-ratio: 1440 / 1488;
   background-image: url('../../assets/backgrounds/impact-background.svg');
   background-size: 100% auto;
   background-position: center top;
@@ -13,7 +13,7 @@
 
 @media (max-width: 768px) {
   .impact {
-    min-height: calc(100vw * 492 / 393);
+    aspect-ratio: 393 / 492;
     background-image: url('../../assets/backgrounds/impact-background-mobile.svg');
   }
 }

@@ -1,12 +1,12 @@
 .past-section {
-    width: 100vw;
-    background-color: #f9f9f9;
-    overflow-x: hidden;
+    width: 100%;
+    background-color: #FFF5E4;
 }
 
 .past-bg-wrapper {
     position: relative;
     width: 100%;
+    margin: 0 auto;
 }
 
 .past-bg-image {
