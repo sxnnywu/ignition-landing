@@ -1,203 +1,132 @@
-/*
-  Main sponsors section — uses container queries so all sizing
-  is relative to the section width (capped at 1440px by the
-  page-wrapper), not the viewport. This prevents overflow on
-  wide monitors.
-*/
 .sponsors-section {
-  container-type: inline-size;
-  width: 100%;
-  min-height: calc(100cqw * 3897 / 1440);
-  background-color: #FFF1D8;
-  background-image: url('../../assets/backgrounds/sponsorship/desktop/sponsors-desktop-background.svg');
+  width: 100vw;
+  min-height: calc(100vw * 3897 / 1440);
+  background-image: url('../../assets/backgrounds/sponsors-background.svg');
   background-size: 100% auto;
   background-position: center top;
   background-repeat: no-repeat;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-.sponsors-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 7.361cqw; /* 106px at 1440 */
-  padding-bottom: 5cqw;
-}
-
-/*
-  Each tier uses its section SVG as background.
-  display:flex prevents margin-collapsing so the grid's
-  margin-top creates space inside the tier (not above it).
-*/
-.sponsors-tier {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: top left;
-}
-
-.sponsors-tier__title {
+.sponsors-cards {
   position: absolute;
-  margin: 0;
-  color: #765C3A;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 3.7cqw; /* ~53px at 1440 */
-  white-space: nowrap;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
-/* Left-aligned: left edge matches SVG text start */
-.sponsors-tier--blaze .sponsors-tier__title {
-  left: 28.4%;    /* 327.1 / 1150 */
-  top: 1.889cqw;
-  transform: translateY(-50%);
-}
-
-/* Right-aligned: right edge matches SVG text end */
-.sponsors-tier--flame .sponsors-tier__title {
-  left: 66.9%;    /* 826.6 / 1236 */
-  top: 1.889cqw;
-  transform: translate(-100%, -50%);
-}
-
-/* Left-aligned: left edge matches SVG text start */
-.sponsors-tier--spark .sponsors-tier__title {
-  left: 32.5%;    /* 430.4 / 1324 */
-  top: 1.951cqw;
-  transform: translateY(-50%);
-}
-
-/* Right-aligned: right edge matches SVG text end */
-.sponsors-tier--regular .sponsors-tier__title {
-  left: 65.1%;    /* 826.6 / 1269 */
-  top: 1.951cqw;
-  transform: translate(-100%, -50%);
-}
-
-.sponsors-grid {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .sponsor-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FFEABD;
-  border-radius: 1cqw;
-  padding: 0.8cqw;
+  position: absolute;
+  pointer-events: auto;
 }
 
 .sponsor-card__logo {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
   display: block;
 }
 
-/*
-  ===== BLAZE (1150 × 529) — 2 columns =====
-  Orange bucket on left, logos to the right.
-  Rects: (300.685, 89) & (752.685, 89)  — row 1
-         (300.685, 323) & (752.685, 323) — row 2
-  Each: 381 × 196.  Col gap: 71.  Row gap: 38.
-*/
-.sponsors-tier--blaze {
-  width: 79.861cqw;      /* 1150 / 14.4 */
-  min-height: 36.736cqw; /* 529 / 14.4  */
-  margin-top: 101cqw;    /* push below background decorations */
-  background-image: url('../../assets/backgrounds/sponsorship/desktop/blaze-desktop-section.svg');
-}
-
-.sponsors-tier--blaze .sponsors-grid {
-  margin-top: 6.181cqw;   /* 89 / 14.4  */
-  margin-left: 28.4%;     /* aligned with title left edge */
-  width: 57.847cqw;       /* (381×2 + 71) / 14.4 */
-  gap: 2.639cqw 4.931cqw; /* row: 38/14.4  col: 71/14.4 */
-}
-
-.sponsors-tier--blaze .sponsor-card {
-  width: 26.458cqw;  /* 381 / 14.4 */
-  height: 13.611cqw; /* 196 / 14.4 */
+.sponsor-card__name {
+  display: block;
+  text-align: center;
+  color: #765C3A;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 0.6vw;
 }
 
 /*
-  ===== FLAME (1236 × 630) — 2 columns =====
-  Green scoop on right, logos to the left.
-  Rects: (16, 91.215) & (468, 91.215)   — row 1
-         (16, 325.215) & (468, 325.215) — row 2
-  Each: 381 × 196.  Col gap: 71.  Row gap: 38.
+  Desktop positions
+  Canvas: 1440 x 3897
 */
-.sponsors-tier--flame {
-  width: 85.833cqw;      /* 1236 / 14.4 */
-  min-height: 43.750cqw; /* 630 / 14.4  */
-  background-image: url('../../assets/backgrounds/sponsorship/desktop/flame-desktop-section.svg');
-}
 
-.sponsors-tier--flame .sponsors-grid {
-  margin-top: 6.334cqw;  /* 91.215 / 14.4 */
-  margin-left: auto;
-  margin-right: 33.1%;   /* right edge aligned with title right edge */
-  width: 57.847cqw;      /* (381×2 + 71) / 14.4 */
-  gap: 2.639cqw 4.931cqw;
-}
+/* Blaze: 381x196, width = 26.4583% */
+.sponsor-card--blaze { width: 26.4583%; }
+.sponsor-card--blaze .sponsor-card__name { font-size: 1.4vw; }
+.sponsor-card--blaze-0 { left: 32.038%; top: 37.311%; }
+.sponsor-card--blaze-1 { left: 63.426%; top: 37.311%; }
+.sponsor-card--blaze-2 { left: 32.038%; top: 44.573%; }
+.sponsor-card--blaze-3 { left: 63.426%; top: 44.573%; }
 
-.sponsors-tier--flame .sponsor-card {
-  width: 26.458cqw;
-  height: 13.611cqw;
-}
+/* Flame: 381x196, width = 26.4583% */
+.sponsor-card--flame { width: 26.4583%; }
+.sponsor-card--flame .sponsor-card__name { font-size: 1.4vw; }
+.sponsor-card--flame-0 { left: 9.276%; top: 56.120%; }
+.sponsor-card--flame-1 { left: 40.665%; top: 56.120%; }
+.sponsor-card--flame-2 { left: 9.276%; top: 63.382%; }
+.sponsor-card--flame-3 { left: 40.665%; top: 63.382%; }
+
+/* Spark: 234.636x121.15, width = 16.2942% */
+.sponsor-card--spark { width: 16.2942%; }
+.sponsor-card--spark .sponsor-card__name { font-size: 0.85vw; }
+.sponsor-card--spark-0 { left: 34.699%; top: 74.831%; }
+.sponsor-card--spark-1 { left: 55.070%; top: 74.831%; }
+.sponsor-card--spark-2 { left: 75.441%; top: 74.831%; }
+.sponsor-card--spark-3 { left: 34.699%; top: 79.488%; }
+.sponsor-card--spark-4 { left: 55.070%; top: 79.488%; }
+.sponsor-card--spark-5 { left: 75.441%; top: 79.488%; }
+
+/* General: 234.636x121.15, width = 16.2942% */
+.sponsor-card--general { width: 16.2942%; }
+.sponsor-card--general .sponsor-card__name { font-size: 0.85vw; }
+.sponsor-card--general-0 { left: 7.698%; top: 88.431%; }
+.sponsor-card--general-1 { left: 28.069%; top: 88.431%; }
+.sponsor-card--general-2 { left: 48.440%; top: 88.431%; }
+.sponsor-card--general-3 { left: 7.698%; top: 93.089%; }
+.sponsor-card--general-4 { left: 28.069%; top: 93.089%; }
+.sponsor-card--general-5 { left: 48.440%; top: 93.089%; }
 
 /*
-  ===== SPARK (1324 × 381) — 3 columns =====
-  Blue scoop on left, logos to the right.
-  Rects: (383.474, 85.158), (676.817, 85.158), (970.16, 85.158)  — row 1
-         (383.474, 236.625), (676.817, 236.625), (970.16, 236.625) — row 2
-  Each: 234.636 × 121.15.  Col gap: 58.707.  Row gap: 30.317.
+  Mobile layout
+  Canvas: 393 x 1571
 */
-.sponsors-tier--spark {
-  width: 91.944cqw;      /* 1324 / 14.4 */
-  min-height: 26.458cqw; /* 381 / 14.4  */
-  background-image: url('../../assets/backgrounds/sponsorship/desktop/spark-desktop-section.svg');
-}
+@media (max-width: 768px) {
+  .sponsors-section {
+    min-height: calc(100vw * 1571 / 393);
+    background-image: url('../../assets/backgrounds/mobile/sponsors-background-mobile.svg');
+  }
 
-.sponsors-tier--spark .sponsors-grid {
-  margin-top: 5.914cqw;   /* 85.158 / 14.4 */
-  margin-left: 32.5%;     /* aligned with title left edge */
-  width: 57.036cqw;       /* (234.636×3 + 58.707×2) / 14.4 */
-  gap: 2.105cqw 4.077cqw; /* row: 30.317/14.4  col: 58.707/14.4 */
-}
+  .sponsor-card__name {
+    margin-top: 0.4vw;
+  }
 
-.sponsors-tier--spark .sponsor-card {
-  width: calc((100% - 2 * 4.077cqw) / 3);
-  height: 8.413cqw;  /* 121.15 / 14.4 */
-}
+  /* Blaze mobile: 111.632x57.6393, width = 28.404% */
+  .sponsor-card--blaze { width: 28.404%; }
+  .sponsor-card--blaze .sponsor-card__name { font-size: 2.4vw; }
+  .sponsor-card--blaze-0 { left: 18.795%; top: 31.435%; }
+  .sponsor-card--blaze-1 { left: 52.496%; top: 31.435%; }
+  .sponsor-card--blaze-2 { left: 18.795%; top: 37.515%; }
+  .sponsor-card--blaze-3 { left: 52.496%; top: 37.515%; }
 
-/*
-  ===== REGULAR (1269 × 364) — 3 columns =====
-  Red scoop on right, logos to the left.
-  Rects: (9.854, 85.158), (303.196, 85.158), (596.539, 85.158)  — row 1
-         (9.854, 236.625), (303.196, 236.625), (596.539, 236.625) — row 2
-  Each: 234.636 × 121.15.  Col gap: 58.706.  Row gap: 30.317.
-*/
-.sponsors-tier--regular {
-  width: 88.125cqw;      /* 1269 / 14.4 */
-  min-height: 25.278cqw; /* 364 / 14.4  */
-  background-image: url('../../assets/backgrounds/sponsorship/desktop/regular-sponsors-desktop-section.svg');
-}
+  /* Flame mobile: 111.632x57.6393, width = 28.404% */
+  .sponsor-card--flame { width: 28.404%; }
+  .sponsor-card--flame .sponsor-card__name { font-size: 2.4vw; }
+  .sponsor-card--flame-0 { left: 18.795%; top: 52.863%; }
+  .sponsor-card--flame-1 { left: 52.496%; top: 52.863%; }
+  .sponsor-card--flame-2 { left: 18.795%; top: 58.942%; }
+  .sponsor-card--flame-3 { left: 52.496%; top: 58.942%; }
 
-.sponsors-tier--regular .sponsors-grid {
-  margin-top: 5.914cqw;  /* 85.158 / 14.4 */
-  margin-left: auto;
-  margin-right: 34.9%;   /* right edge aligned with title right edge */
-  width: 57.036cqw;      /* (234.636×3 + 58.706×2) / 14.4 */
-  gap: 2.105cqw 4.077cqw;
-}
+  /* Spark mobile: 68.7477x35.4967, width = 17.494% */
+  .sponsor-card--spark { width: 17.494%; }
+  .sponsor-card--spark .sponsor-card__name { font-size: 1.5vw; }
+  .sponsor-card--spark-0 { left: 18.339%; top: 75.129%; }
+  .sponsor-card--spark-1 { left: 40.209%; top: 75.129%; }
+  .sponsor-card--spark-2 { left: 62.079%; top: 75.129%; }
+  .sponsor-card--spark-3 { left: 18.339%; top: 79.337%; }
+  .sponsor-card--spark-4 { left: 40.209%; top: 79.337%; }
+  .sponsor-card--spark-5 { left: 62.079%; top: 79.337%; }
 
-.sponsors-tier--regular .sponsor-card {
-  width: calc((100% - 2 * 4.077cqw) / 3);
-  height: 8.413cqw;  /* 121.15 / 14.4 */
+  /* General mobile: 68.7477x35.4967, width = 17.494% */
+  .sponsor-card--general { width: 17.494%; }
+  .sponsor-card--general .sponsor-card__name { font-size: 1.5vw; }
+  .sponsor-card--general-0 { left: 18.339%; top: 90.994%; }
+  .sponsor-card--general-1 { left: 40.209%; top: 90.994%; }
+  .sponsor-card--general-2 { left: 62.079%; top: 90.994%; }
+  .sponsor-card--general-3 { left: 18.339%; top: 95.202%; }
+  .sponsor-card--general-4 { left: 40.209%; top: 95.202%; }
+  .sponsor-card--general-5 { left: 62.079%; top: 95.202%; }
 }
