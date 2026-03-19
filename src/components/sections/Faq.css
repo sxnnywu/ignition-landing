@@ -1,4 +1,5 @@
 .faq-section {
+  container-type: inline-size;
   width: 100%;
   aspect-ratio: 1440 / 1253;
   background-image: url('../../assets/backgrounds/faq-background.svg');
@@ -40,7 +41,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.875vw;
+  gap: 1.875cqw;
   pointer-events: none;
 }
 
@@ -48,7 +49,7 @@
   text-align: center;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 1.389vw;
+  font-size: 1.389cqw;
   color: #000;
   line-height: 1.25;
 }
@@ -56,11 +57,34 @@
 .faq-towel-answer {
   text-align: center;
   font-family: 'Satoshi Variable', 'Satoshi', sans-serif;
-  font-size: 1.389vw;
+  font-size: 1.389cqw;
   font-weight: 400;
   line-height: normal;
   color: #000;
   margin: 0;
+}
+
+/* Shadows (above towels, below overlay) */
+.faq-shadow {
+  position: absolute;
+  background: #fff1d8;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.faq-shadow--coconut {
+  width: 13.681%;
+  height: 5.347%;
+  left: 29.861%;
+  top: 73.664%;
+}
+
+.faq-shadow--redball {
+  width: 13.681%;
+  height: 5.347%;
+  left: 61.181%;
+  top: 24.9%;
 }
 
 /* Red ball + coconut overlay (renders above towels) */
@@ -84,18 +108,15 @@
   display: none;
 }
 
-/* FAQ title text (replaces SVG path text) */
+/* FAQ title: embedded in desktop SVG, HTML used only for mobile */
 .faq-title {
+  display: none;
   position: absolute;
-  color: #18265B;
+  color: #18265b;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 5.5vw;
   margin: 0;
   pointer-events: none;
-  left: 34%;
-  top: 32.7%;
-  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
@@ -152,6 +173,20 @@
     background-image: url('../../assets/backgrounds/faq-background-mobile.svg');
   }
 
+  .faq-shadow--coconut {
+    width: 13.677%;
+    height: 2.21%;
+    left: 43.622%;
+    top: 37.843%;
+  }
+
+  .faq-shadow--redball {
+    width: 13.677%;
+    height: 2.21%;
+    left: 79.472%;
+    top: 9.187%;
+  }
+
   /* Hide desktop overlay, show mobile overlay */
   .faq-overlay--desktop {
     display: none;
@@ -162,25 +197,26 @@
   }
 
   .faq-title {
-    font-size: 6vw;
-    left: 35.7%;
+    display: block;
+    font-size: 6cqw;
+    left: 34%;
     top: 15%;
+    transform: translate(-50%, -50%) rotate(-12deg);
   }
 
   .faq-towel-content {
-    gap: 3.5vw;
+    gap: 3.5cqw;
   }
 
   .faq-towel-text {
-    font-size: 2.8vw;
+    font-size: 2.8cqw;
   }
 
   .faq-towel-answer {
-    font-size: 2.8vw;
+    font-size: 2.8cqw;
   }
 
   /* Towel 1 - Light Pink (top, right — swapped with dark blue) */
-  /* Was filter3_d position: x=185.962, y=65 */
   .faq-towel--1 {
     width: 47.0446%;
     left: 47.4393%;
@@ -188,7 +224,6 @@
   }
 
   /* Towel 2 - Yellow (middle row, left) */
-  /* filter4_d: x=12.906, y=304 */
   .faq-towel--2 {
     width: 48.3513%;
     left: 3.2923%;
@@ -196,7 +231,6 @@
   }
 
   /* Towel 3 - Light Blue (middle row, right) */
-  /* filter0_d: x=198.906, y=304 */
   .faq-towel--3 {
     width: 48.3513%;
     left: 50.7413%;
@@ -204,7 +238,6 @@
   }
 
   /* Towel 4 - Dark Blue (bottom row, left — swapped with pink) */
-  /* Was filter1_d position: x=1.906, y=548 */
   .faq-towel--4 {
     width: 48.3513%;
     left: 0.4862%;
@@ -212,10 +245,9 @@
   }
 
   /* Towel 5 - Green (bottom row, right) */
-  /* filter2_d: x=205.906, y=548 */
   .faq-towel--5 {
     width: 48.3513%;
-    left: 52.5270%;
+    left: 52.527%;
     top: 66.4242%;
   }
 }
