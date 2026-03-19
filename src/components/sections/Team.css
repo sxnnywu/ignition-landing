@@ -1,4 +1,5 @@
 .team {
+  position: relative;
   width: 100%;
   overflow: hidden;
 }
@@ -8,3 +9,52 @@
   height: auto;
   display: block;
 }
+
+/* Shared headshot style — circle, sized relative to container */
+.headshot {
+  position: absolute;
+  width: 5.67%;        /* scales with section width */
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+/* Row 1 */
+.hs-jamie      { top: 60.61%; left: 11.88%; }
+.hs-lily       { top: 60.37%; left: 32.11%; }
+.hs-ivan       { top: 60.52%; left: 52.88%; }
+.hs-nahyun     { top: 60.37%; left: 70.63%; }
+.hs-youssef    { top: 60.37%; left: 90.63%; }
+
+/* Row 2 */
+.hs-vishal     { top: 69.43%; left: 11.7%; }
+.hs-aryan    { top: 69.41%; left: 27.68%; }
+.hs-caden    { top: 69.43%; left: 47.31%; }
+.hs-anushka  { top: 69.65%; left: 66.8%; }
+.hs-ava      { top: 69.6%; left: 85.1%; }
+
+/* Row 3 */
+.hs-jeremy     { top: 76.02%; left: 16.24%; }
+.hs-haardik  { top: 78.3%; left: 35.76%; }
+.hs-erin     { top: 78.3%; left: 52%; }
+.hs-shinena    { top: 76.5%; left: 72.25%; }
+.hs-thanusshan { top: 76%; left: 86.16%; }
+
+
+/* Row 4 */
+.hs-adam     { top: 85.02%; left: 18.2%; }
+.hs-emily    { top: 85.64%; left: 32.3%; }
+.hs-harshpreet { top: 85.63%; left: 50.2%; }
+.hs-sunny      { top: 85.78%; left: 65.56%; }
+.hs-philip     { top: 85.2%; left: 83.7%; }
+
+/* Row 5 */
+.hs-daisy    { top: 93.5%; left: 48.85%; }
+
+
+/* .hs-chris    { top: 87%; left:  9%; }
+.hs-sanidhya   { top: 87%; left: 35%; }
+.hs-sebastian  { top: 87%; left: 65%; }
+.hs-winston    { top: 68%; left: 95%; } */
+
