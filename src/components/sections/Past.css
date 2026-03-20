@@ -47,17 +47,45 @@
     width: 12.7%;
 }
 
-.slideshow-image {
-    z-index: 0;
+.slideshow-viewport {
     position: absolute;
     top: 14.5%;
     left: 25%;
     width: 64.3%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.6s ease;
+    overflow: hidden;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.slideshow-image {
+    width: 100%;
+    display: block;
+}
+
+.exit-to-left,
+.exit-to-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.enter-from-right { animation: enterFromRight 0.7s ease forwards; }
+.enter-from-left  { animation: enterFromLeft  0.7s ease forwards; }
+.exit-to-left     { animation: exitToLeft     0.7s ease forwards; }
+.exit-to-right    { animation: exitToRight    0.7s ease forwards; }
+
+@keyframes enterFromRight {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+}
+@keyframes enterFromLeft {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+}
+@keyframes exitToLeft {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+}
+@keyframes exitToRight {
+    from { transform: translateX(0); }
+    to   { transform: translateX(100%); }
 }
