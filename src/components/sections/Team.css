@@ -10,20 +10,77 @@
   display: block;
 }
 
-/* Shared headshot style — circle, sized relative to container */
-.headshot {
+/* Wrapper — holds position, size, and hover context */
+.hs-wrap {
   position: absolute;
-  width: 5.67%;        /* scales with section width */
+  width: 5.67%;
   aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.hs-wrap:hover {
+  z-index: 100;
+}
+
+/* Circle photo */
+.hs-img {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  transform: translate(-50%, -50%);
+  outline: 4px solid transparent;
+  outline-offset: 1px;
+  transition: transform 0.25s ease, outline-color 0.25s ease;
+  display: block;
+}
+
+.hs-wrap:hover .hs-img {
+  transform: scale(1.5);
+  outline-color: #b39ddb;
+}
+
+/* Tooltip label */
+.hs-label {
+  position: absolute;
+  bottom: calc(100% + 36px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFF1D8;
+  border: 3px solid #000;
+  border-radius: 10px;
+  padding: 6px 14px;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.hs-label-name {
+  font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+  line-height: 1;
+}
+
+.hs-label-role {
+  font-size: clamp(0.85rem, 1.2vw, 1.2rem);
+  line-height: 1;
+}
+
+.hs-wrap:hover .hs-label {
+  opacity: 1;
 }
 
 /* Row 1 */
 .hs-jamie      { top: 60.63%; left: 11.84%; }
-.hs-lily       { top: 60.38%; left: 32.08%; }
-.hs-ivan       { top: 60.53%; left: 52.88%; }
+.hs-lily       { top: 60.53%; left: 37.74%; }
+.hs-ivan       { top: 60.36%; left: 56.3%; }
 .hs-nahyun     { top: 60.37%; left: 70.63%; }
 .hs-youssef    { top: 60.38%; left: 90.61%; }
 
@@ -47,15 +104,15 @@
 .hs-emily    { top: 85.66%; left: 32.3%; }
 .hs-harshpreet { top: 85.66%; left: 50.19%; }
 .hs-sunny      { top: 85.80%; left: 65.59%; }
-.hs-philip     { top: 85.21%; left: 83.69%; }
+.hs-philip     { top: 85.20%; left: 83.69%; }
 
 /* Row 5 */
-.hs-chris    { top: 93.08%; left:  33.21%; }
-.hs-daisy    { top: 93.5%; left: 48.85%; }
+.hs-winston    { top: 93.4%; left: 17.95%; } 
+.hs-chris    { top: 93.08%; left:  33.24%; }
+.hs-daisy    { top: 93.55%; left: 48.85%; }
 
 
 /*
 .hs-sanidhya   { top: 87%; left: 35%; }
-.hs-sebastian  { top: 87%; left: 65%; }
-.hs-winston    { top: 68%; left: 95%; } */
+.hs-sebastian  { top: 87%; left: 65%; }*/
 
