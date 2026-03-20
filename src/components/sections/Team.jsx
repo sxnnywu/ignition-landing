@@ -45,7 +45,7 @@ const members = {
   lily:       { name: 'Lily',       role: 'UI/UX Director' },
   nahyun:     { name: 'Nahyun',     role: 'Marketing Executive' },
   philip:     { name: 'Philip',     role: 'Logistics Executive' },
-  // sanidhya:   { name: 'Sanidhya',   role: 'Member' },
+  sanidhya:   { name: 'Sanidhya',   role: 'Logistics Executive' },
   sebastian:  { name: 'Sebastian',  role: 'Logistics Executive' },
   shinena:    { name: 'Shinena',    role: 'Logistics Executive' },
   sunny:      { name: 'Sunny',      role: 'Development Director' },
@@ -90,8 +90,8 @@ export default function MeetTheTeam() {
       <Pin src={lily}        id="lily"        className="hs-lily" />
       <Pin src={nahyun}      id="nahyun"      className="hs-nahyun" />
       <Pin src={philip}      id="philip"      className="hs-philip" />
-      {/* <Pin src={sanidhya}    id="sanidhya"    className="hs-sanidhya" /> */}
-      {/* <Pin src={sebastian}   id="sebastian"   className="hs-sebastian" /> */}
+      <Pin src={sanidhya}    id="sanidhya"    className="hs-sanidhya" />
+      <Pin src={sebastian}   id="sebastian"   className="hs-sebastian" />
       <Pin src={shinena}     id="shinena"     className="hs-shinena" />
       <Pin src={sunny}       id="sunny"       className="hs-sunny" />
       <Pin src={thanusshan}  id="thanusshan"  className="hs-thanusshan" />
