@@ -27,36 +27,77 @@ import vishal from '../../assets/headshots/vishal.png';
 import winston from '../../assets/headshots/winston.png';
 import youssef from '../../assets/headshots/youssef.png';
 
+const members = {
+  adam:       { name: 'Adam',       role: 'Development Executive' },
+  anushka:    { name: 'Anushka',    role: 'Sponsorship Executive' },
+  aryan:      { name: 'Aryan',      role: 'Development Executive' },
+  ava:        { name: 'Ava',        role: 'UI/UX Executive' },
+  caden:      { name: 'Caden',      role: 'Logistics Executive' },
+  chris:      { name: 'Chris',      role: 'Marketing Director' },
+  daisy:      { name: 'Daisy',      role: 'Sponsorship Executive' },
+  emily:      { name: 'Emily',      role: 'Logistics Director' },
+  erin:       { name: 'Erin',       role: 'Sponsorship Director' },
+  haardik:    { name: 'Haardik',    role: 'Sponsorship Executive' },
+  harshpreet: { name: 'Harshpreet', role: 'IgnitionHacks Chair' },
+  ivan:       { name: 'Ivan',       role: 'Marketing Executive' },
+  jamie:      { name: 'Jamie',      role: 'Sponsorship Director' },
+  jeremy:     { name: 'Jeremy',     role: 'Development Executive' },
+  lily:       { name: 'Lily',       role: 'UI/UX Director' },
+  nahyun:     { name: 'Nahyun',     role: 'Marketing Executive' },
+  philip:     { name: 'Philip',     role: 'Logistics Executive' },
+  // sanidhya:   { name: 'Sanidhya',   role: 'Member' },
+  sebastian:  { name: 'Sebastian',  role: 'Logistics Executive' },
+  shinena:    { name: 'Shinena',    role: 'Logistics Executive' },
+  sunny:      { name: 'Sunny',      role: 'Development Director' },
+  thanusshan: { name: 'Thanusshan', role: 'Marketing Executive' },
+  vishal:     { name: 'Vishal',     role: 'Logistics Executive' },
+  winston:    { name: 'Winston',    role: 'UI/UX Executive' },
+  youssef:    { name: 'Youssef',    role: 'Development Executive' },
+};
+
+function Pin({ src, id, className }) {
+  const { name, role } = members[id];
+  return (
+    <div className={`hs-wrap ${className}`}>
+      <div className="hs-label">
+        <span className="hs-label-name">{name}</span>
+        <span className="hs-label-role">{role}</span>
+      </div>
+      <img src={src} alt={name} className="hs-img" />
+    </div>
+  );
+}
+
 export default function MeetTheTeam() {
   return (
     <section className="team">
       <img src={teamBg} alt="Meet the Team" className="team-bg" />
 
-      <img src={adam}        alt="Adam"        className="headshot hs-adam" />
-      <img src={anushka}     alt="Anushka"     className="headshot hs-anushka" />
-      <img src={aryan}       alt="Aryan"       className="headshot hs-aryan" />
-      <img src={ava}         alt="Ava"         className="headshot hs-ava" />
-      <img src={caden}       alt="Caden"       className="headshot hs-caden" />
-      {/* <img src={chris}       alt="Chris"       className="headshot hs-chris" /> */}
-      <img src={daisy}       alt="Daisy"       className="headshot hs-daisy" />
-      <img src={emily}       alt="Emily"       className="headshot hs-emily" />
-      <img src={erin}        alt="Erin"        className="headshot hs-erin" />
-      <img src={haardik}     alt="Haardik"     className="headshot hs-haardik" />
-      <img src={harshpreet}  alt="Harshpreet"  className="headshot hs-harshpreet" />
-      <img src={ivan}        alt="Ivan"        className="headshot hs-ivan" />
-      <img src={jamie}       alt="Jamie"       className="headshot hs-jamie" />
-      <img src={jeremy}      alt="Jeremy"      className="headshot hs-jeremy" />
-      <img src={lily}        alt="Lily"        className="headshot hs-lily" />
-      <img src={nahyun}      alt="Nahyun"      className="headshot hs-nahyun" />
-      <img src={philip}      alt="Philip"      className="headshot hs-philip" />
-      {/* <img src={sanidhya}    alt="Sanidhya"    className="headshot hs-sanidhya" /> */}
-      {/* <img src={sebastian}   alt="Sebastian"   className="headshot hs-sebastian" /> */}
-      <img src={shinena}     alt="Shinena"     className="headshot hs-shinena" />
-      <img src={sunny}       alt="Sunny"       className="headshot hs-sunny" />
-      <img src={thanusshan}  alt="Thanusshan"  className="headshot hs-thanusshan" />
-      <img src={vishal}      alt="Vishal"      className="headshot hs-vishal" />
-      {/* <img src={winston}     alt="Winston"     className="headshot hs-winston" /> */}
-      <img src={youssef}     alt="Youssef"     className="headshot hs-youssef" />
+      <Pin src={adam}        id="adam"        className="hs-adam" />
+      <Pin src={anushka}     id="anushka"     className="hs-anushka" />
+      <Pin src={aryan}       id="aryan"       className="hs-aryan" />
+      <Pin src={ava}         id="ava"         className="hs-ava" />
+      <Pin src={caden}       id="caden"       className="hs-caden" />
+      <Pin src={chris}       id="chris"       className="hs-chris" />
+      <Pin src={daisy}       id="daisy"       className="hs-daisy" />
+      <Pin src={emily}       id="emily"       className="hs-emily" />
+      <Pin src={erin}        id="erin"        className="hs-erin" />
+      <Pin src={haardik}     id="haardik"     className="hs-haardik" />
+      <Pin src={harshpreet}  id="harshpreet"  className="hs-harshpreet" />
+      <Pin src={ivan}        id="ivan"        className="hs-ivan" />
+      <Pin src={jamie}       id="jamie"       className="hs-jamie" />
+      <Pin src={jeremy}      id="jeremy"      className="hs-jeremy" />
+      <Pin src={lily}        id="lily"        className="hs-lily" />
+      <Pin src={nahyun}      id="nahyun"      className="hs-nahyun" />
+      <Pin src={philip}      id="philip"      className="hs-philip" />
+      {/* <Pin src={sanidhya}    id="sanidhya"    className="hs-sanidhya" /> */}
+      {/* <Pin src={sebastian}   id="sebastian"   className="hs-sebastian" /> */}
+      <Pin src={shinena}     id="shinena"     className="hs-shinena" />
+      <Pin src={sunny}       id="sunny"       className="hs-sunny" />
+      <Pin src={thanusshan}  id="thanusshan"  className="hs-thanusshan" />
+      <Pin src={vishal}      id="vishal"      className="hs-vishal" />
+      <Pin src={winston}     id="winston"     className="hs-winston" />
+      <Pin src={youssef}     id="youssef"     className="hs-youssef" />
     </section>
   );
 }
