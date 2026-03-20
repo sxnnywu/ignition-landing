@@ -37,7 +37,7 @@ export default function MeetTheTeam() {
       <img src={aryan}       alt="Aryan"       className="headshot hs-aryan" />
       <img src={ava}         alt="Ava"         className="headshot hs-ava" />
       <img src={caden}       alt="Caden"       className="headshot hs-caden" />
-      {/* <img src={chris}       alt="Chris"       className="headshot hs-chris" /> */}
+      <img src={chris}       alt="Chris"       className="headshot hs-chris" />
       <img src={daisy}       alt="Daisy"       className="headshot hs-daisy" />
       <img src={emily}       alt="Emily"       className="headshot hs-emily" />
       <img src={erin}        alt="Erin"        className="headshot hs-erin" />

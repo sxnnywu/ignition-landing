@@ -1,5 +1,5 @@
 import './Sponsors.css';
-import sponsorLogo from '../../assets/sponsors/single-sponsor.svg';
+// import sponsorLogo from '../../assets/sponsors/single-sponsor.svg';
 
 const sponsorSections = [
   { tier: 'blaze', count: 4 },
@@ -18,7 +18,7 @@ export default function Sponsors() {
               key={`${section.tier}-${i}`}
               className={`sponsor-card sponsor-card--${section.tier} sponsor-card--${section.tier}-${i}`}
             >
-              <img className="sponsor-card__logo" src={sponsorLogo} alt="Math Endowment Fund" />
+              {/* <img className="sponsor-card__logo" src={sponsorLogo} alt="Math Endowment Fund" /> */}
               <span className="sponsor-card__name">Math Endowment Fund</span>
             </div>
           ))
