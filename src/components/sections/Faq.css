@@ -22,7 +22,6 @@
 .faq-towel {
   position: absolute;
   pointer-events: auto;
-  cursor: pointer;
 }
 
 .faq-towel img {
