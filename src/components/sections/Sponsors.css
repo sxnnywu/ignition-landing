@@ -86,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FFEABD;
+  background-color: #FFDFAA;
   border-radius: 1cqw;
   padding: 0.8cqw;
 }
@@ -195,4 +195,129 @@
 .sponsors-tier--regular .sponsor-card {
   width: calc((100% - 2 * 4.077cqw) / 3);
   height: 8.413cqw;  /* 121.15 / 14.4 */
+}
+
+/*
+  ===== MOBILE LAYOUT (max-width: 768px) =====
+  Uses mobile-specific SVGs from sponsorship/mobile/.
+  All 4 tier grids are left-aligned on mobile (cards start at x=10).
+  Card holder background color: #FFDFAA, border-radius: rx=10.
+  Columns: Blaze/Flame = 2,  Spark/Regular = 3.
+*/
+@media (max-width: 768px) {
+  .sponsors-section {
+    background-image: url('../../assets/backgrounds/sponsorship/mobile/sponsorship-mobile-background.svg');
+  }
+
+  .sponsors-content {
+    gap: 32px;
+  }
+
+  .sponsors-tier__title {
+    font-size: 6cqw;
+  }
+
+  .sponsor-card {
+    border-radius: 2.5cqw;
+    padding: 1.2cqw;
+  }
+
+  /*
+    — Blaze mobile (254 × 254) — 2 columns —
+    Card holders: 121.008 × 63.4993 at x=10,132.435  y=108.932,190.431
+    Col gap: 1.427   Row gap: 18
+  */
+  .sponsors-tier--blaze {
+    width: 64.631cqw;    /* 254 / 3.93 */
+    margin-top: 97.2cqw; /* push below mobile background decorations */
+    background-image: url('../../assets/backgrounds/sponsorship/mobile/blaze-mobile-section.svg');
+  }
+  .sponsors-tier--blaze .sponsors-tier__title {
+    left: 3.94%;
+    top: 22.9cqw;
+  }
+  .sponsors-tier--blaze .sponsors-grid {
+    margin-top: 27.72cqw;
+    margin-left: 3.94%;
+    width: 61.95cqw;
+    gap: 18px 11px;
+  }
+  .sponsors-tier--blaze .sponsor-card {
+    width: calc((100% - 11px) / 2);
+    height: 16.16cqw;
+  }
+
+  /*
+    — Flame mobile (254 × 294) — 2 columns —
+    Card holders: 121.008 × 63.4993 at x=10,132.435  y=133.215,214.715
+    Col gap: 1.427   Row gap: 18.001
+  */
+  .sponsors-tier--flame {
+    width: 64.631cqw;
+    background-image: url('../../assets/backgrounds/sponsorship/mobile/flame-mobile-section.svg');
+  }
+  .sponsors-tier--flame .sponsors-tier__title {
+    left: 96.3%;
+    top: 28.75cqw;
+  }
+  .sponsors-tier--flame .sponsors-grid {
+    margin-top: 33.90cqw;
+    margin-left: 3.94%;
+    margin-right: 0;
+    width: 61.95cqw;
+    gap: 18px 11px;
+  }
+  .sponsors-tier--flame .sponsor-card {
+    width: calc((100% - 11px) / 2);
+    height: 16.16cqw;
+  }
+
+  /*
+    — Spark mobile (282 × 231) — 3 columns —
+    Card holders: 74.5218 × 39.1055 at x=10,85.948,171.897  y=134.422,191.528
+    Col gap: 1.426   Row gap: 18
+  */
+  .sponsors-tier--spark {
+    width: 71.756cqw;    /* 282 / 3.93 */
+    background-image: url('../../assets/backgrounds/sponsorship/mobile/spark-mobile-section.svg');
+  }
+  .sponsors-tier--spark .sponsors-tier__title {
+    left: 3.55%;
+    top: 29.26cqw;
+  }
+  .sponsors-tier--spark .sponsors-grid {
+    margin-top: 34.20cqw;
+    margin-left: 3.55%;
+    width: 57.61cqw;
+    gap: 18px 11px;
+  }
+  .sponsors-tier--spark .sponsor-card {
+    width: calc((100% - 2 * 11px) / 3);
+    height: 9.95cqw;
+  }
+
+  /*
+    — Regular mobile (254 × 201) — 3 columns —
+    Card holders: 74.5218 × 39.1055 at x=10,85.948,171.897  y=103.976,161.081
+    Col gap: 1.426   Row gap: 17.999
+  */
+  .sponsors-tier--regular {
+    width: 64.631cqw;
+    background-image: url('../../assets/backgrounds/sponsorship/mobile/regular-sponsors-mobile-section.svg');
+  }
+  .sponsors-tier--regular .sponsors-tier__title {
+    left: 96.3%;
+    top: 21.63cqw;
+  }
+  .sponsors-tier--regular .sponsors-grid {
+    margin-top: 26.46cqw;
+    margin-left: 3.94%;
+    margin-right: 0;
+    width: 57.61cqw;
+    gap: 18px 11px;
+  }
+  .sponsors-tier--regular .sponsor-card {
+    width: calc((100% - 2 * 11px) / 3);
+    height: 9.95cqw;
+  }
 }
