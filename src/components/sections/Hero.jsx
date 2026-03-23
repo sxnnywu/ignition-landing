@@ -1,11 +1,13 @@
 // src/components/sections/Hero.jsx
 
 // imports
-import React from 'react';
+import React, { useState } from 'react';
 import './Hero.css';
 
 // Hero component
 export default function Hero() {
+  const [showPopup, setShowPopup] = useState(false);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -30,8 +32,17 @@ export default function Hero() {
       <div className="content">
         <h1>Arts & Technology <br />Hackathon</h1>
         <p>August 15-18, 2026</p>
-        <button>Apply Now!</button>
+        <button onClick={() => setShowPopup(true)}>Apply Now!</button>
       </div>
+
+      {showPopup && (
+        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+          <div className="popup-box" onClick={e => e.stopPropagation()}>
+            <p>Hacker applications are not open yet. Keep an eye on our social media for updates on when they go live!</p>
+            <button onClick={() => setShowPopup(false)}>Got it!</button>
+          </div>
+        </div>
+      )}
 
       {/* What is Ignition Hacks section */}
       <div className="hero-description" id="about-section">

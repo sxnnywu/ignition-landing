@@ -334,3 +334,53 @@
         transform: rotate(-10deg);
     }
 }
+/* Apply Now popup */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-box {
+    background: #FFF5E4;
+    border-radius: 12px;
+    border: 3px solid var(--purple);
+    padding: 2rem 2.5rem;
+    max-width: 380px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.popup-box p {
+    font-size: 1.05rem;
+    font-family: var(--font-display);
+    color: var(--black);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.popup-box button {
+    align-self: center;
+    padding: 0.5rem 1.75rem;
+    height: 42px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--font-display);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--purple);
+    color: var(--white);
+    transition: transform 0.25s ease, background-color 0.2s ease;
+}
+
+.popup-box button:hover {
+    background-color: var(--dark-purple);
+    transform: scale(1.05);
+}
