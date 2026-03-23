@@ -1,5 +1,6 @@
 <svg width="362" height="432" viewBox="0 0 362 432" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_450_773)" filter="url(#filter0_d_450_773)">
+<g filter="url(#filter0_d_450_773)">
+<g clip-path="url(#clip0_450_773)">
 <path d="M45 0H313.5L358 424H4L45 0Z" fill="#88DAAD"/>
 <mask id="mask0_450_773" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="0" width="354" height="424">
 <path d="M45 0H313.5L358 424H4L45 0Z" fill="#D5F6FD"/>
@@ -11,8 +12,9 @@
 <line x1="41" y1="31" x2="317" y2="31" stroke="#FFF3F3" style="mix-blend-mode:multiply" stroke-width="18"/>
 <line x1="6" y1="383" x2="354" y2="383" stroke="#FFF3F3" style="mix-blend-mode:multiply" stroke-width="18"/>
 </g>
+</g>
 <defs>
-<filter id="filter0_d_450_773" x="0" y="0" width="362" height="432" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_450_773" x="-4" y="-4" width="370" height="444" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>

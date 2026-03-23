@@ -4,6 +4,7 @@
   background-color: var(--footer-background);
   padding: 3.2em;
   align-items: center;
+  font-family: var(--font-display);
 }
 
 #icons-container {
