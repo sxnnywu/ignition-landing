@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/illustrations/nav/logo.png';
 import loginBtn from '../../assets/illustrations/nav/login.png';
@@ -7,18 +8,21 @@ import linkedin from '../../assets/illustrations/nav/linkedin.png';
 import email from '../../assets/illustrations/nav/email.svg';
 
 export default function Navbar() {
+  const [showPopup, setShowPopup] = useState(false);
+
   return (
+    <>
     <nav className="navbar">
       <div className="navbar-left">
         <img src={logo} alt="Ignition Hacks Logo" className="navbar-logo" />
       </div>
       <div className="navbar-right">
-        <a href="#login" className="navbar-btn">
+        <button className="navbar-btn" onClick={() => setShowPopup(true)}>
           <img src={loginBtn} alt="Login" />
-        </a>
-        <a href="#register" className="navbar-btn">
+        </button>
+        <button className="navbar-btn" onClick={() => setShowPopup(true)}>
           <img src={registrationBtn} alt="Registration" />
-        </a>
+        </button>
         <div className="navbar-socials">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <img src={insta} alt="Instagram" />
@@ -32,5 +36,15 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+
+    {showPopup && (
+      <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+        <div className="popup-box" onClick={e => e.stopPropagation()}>
+          <p>Hacker applications are not open yet. Keep an eye on our social media for updates on when they go live!</p>
+          <button onClick={() => setShowPopup(false)}>Got it!</button>
+        </div>
+      </div>
+    )}
+    </>
   );
 }

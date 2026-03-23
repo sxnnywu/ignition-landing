@@ -31,6 +31,13 @@
   gap: clamp(8px, 1.2vw, 16px);
 }
 
+button.navbar-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .navbar-btn img {
   height: clamp(24px, 3vw, 40px);
   width: auto;
